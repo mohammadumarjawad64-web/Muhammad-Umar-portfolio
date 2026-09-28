@@ -1,0 +1,629 @@
+{
+  "basics": {
+    "name": "Muhammad Umar",
+    "shortName": "MU",
+    "image": "images/profile.svg",
+    "label": "Computer Science Student",
+    "headline": "Aspiring Computer Scientist exploring programming, technology, and the world of computer science.",
+    "summary": "I am a first-semester BSCS student at GUTECH in Karongi. I am at the beginning of my journey in computer science and currently focused on developing strong programming fundamentals, learning C++, improving my problem-solving abilities, and exploring different areas of technology.",
+    "location": {
+      "country": "Pakistan",
+      "countryCode": "PK",
+      "region": "Karongi",
+      "city": "Karongi"
+    },
+    "nationality": "Pakistani",
+    "email": "mohammadumarjawad64@gmail.com",
+    "availability": "Currently studying Bachelor of Science in Computer Science at GUTECH.",
+    "studentStatus": "First Semester Student",
+    "careerGoal": "Computer Scientist",
+    "leadershipNote": "At the beginning of my academic journey, I am focused on learning consistently, developing strong technical foundations, and preparing myself for future opportunities in computer science and technology.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "mohammad-umar-jawad-b80508253",
+        "url": "https://www.linkedin.com/in/mohammad-umar-jawad-b80508253/",
+        "icon": "fa-brands fa-linkedin-in"
+      },
+      {
+        "network": "GitHub",
+        "username": "mohammadumarjawad64-web",
+        "url": "https://github.com/mohammadumarjawad64-web/Muhammad-Umar-portfolio",
+        "icon": "fa-brands fa-github"
+      }
+    ]
+  },
+  "cs": {
+    "name": "Muhammad Umar",
+    "shortName": "MU",
+    "label": "Computer Science Student",
+    "headline": "Aspiring Computer Scientist exploring programming, technology, and the world of computer science.",
+    "summary": "I am a first-semester BSCS student at GUTECH in Karongi. I am at the beginning of my journey in computer science and currently focused on developing strong programming fundamentals, learning C++, improving my problem-solving abilities, and exploring different areas of technology.",
+    "location": {
+      "country": "Pakistan",
+      "countryCode": "PK",
+      "region": "Karongi",
+      "city": "Karongi"
+    },
+    "nationality": "Pakistani",
+    "email": "mohammadumarjawad64@gmail.com",
+    "availability": "Currently studying Bachelor of Science in Computer Science at GUTECH.",
+    "studentStatus": "First Semester Student",
+    "careerGoal": "Computer Scientist",
+    "leadershipNote": "At the beginning of my academic journey, I am focused on learning consistently, developing strong technical foundations, and preparing myself for future opportunities in computer science and technology.",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "mohammad-umar-jawad-b80508253",
+        "url": "https://www.linkedin.com/in/mohammad-umar-jawad-b80508253/",
+        "icon": "fa-brands fa-linkedin-in"
+      },
+      {
+        "network": "GitHub",
+        "username": "mohammadumarjawad64-web",
+        "url": "https://github.com/mohammadumarjawad64-web/Muhammad-Umar-portfolio",
+        "icon": "fa-brands fa-github"
+      }
+    ]
+  },
+
+  "about": {
+    "title": "About Me",
+    "subtitle": "A student beginning his journey into computer science.",
+    "intro": [
+      "My name is Muhammad Umar, and I am a Pakistani student currently studying Bachelor of Science in Computer Science at GUTECH in Karongi.",
+      "I am currently in my first semester, which means I am at the beginning of my academic journey in computer science. I am using this stage of my education to understand the fundamentals of programming, computing, problem solving, and technology.",
+      "I have started learning C++ and I am gradually becoming more comfortable with programming concepts. My current focus is not on claiming advanced expertise, but on building a strong foundation that I can continue developing throughout my degree.",
+      "I believe computer science is a field where learning never really stops. There are always new programming languages, frameworks, technologies, ideas, and problems to explore.",
+      "My long-term career goal is to become a Computer Scientist. I want to develop strong technical knowledge, gain practical experience, build meaningful projects, and eventually contribute to useful technology solutions.",
+      "This portfolio represents the beginning of that journey. As I learn more, complete projects, develop new skills, and gain experience, I plan to continue improving and expanding it."
+    ],
+    "strengths": [
+      "Willingness to learn",
+      "Programming fundamentals",
+      "C++ fundamentals",
+      "Problem solving",
+      "Logical thinking",
+      "Curiosity about technology",
+      "Continuous self-improvement",
+      "Computer Science fundamentals"
+    ],
+    "interests": [
+      "Computer Science",
+      "Programming",
+      "Software Development",
+      "Technology",
+      "Problem Solving",
+      "Learning New Technologies",
+      "Computer Systems",
+      "Future Software Projects"
+    ],
+    "values": [
+      {
+        "title": "Learning",
+        "description": "I believe consistent learning is one of the most important parts of becoming a successful technology professional."
+      },
+      {
+        "title": "Curiosity",
+        "description": "I enjoy discovering how computers, programs, and technologies work and asking questions that help me understand them better."
+      },
+      {
+        "title": "Growth",
+        "description": "I want to improve gradually by practicing, making mistakes, learning from them, and continuing to develop my skills."
+      },
+      {
+        "title": "Consistency",
+        "description": "Building a career in computer science takes time, so I value consistent effort and steady progress."
+      }
+    ],
+    "leadershipPillars": [
+      {
+        "title": "Learning",
+        "description": "Building a strong academic foundation in computer science and continuously improving my understanding of programming and technology."
+      },
+      {
+        "title": "Programming",
+        "description": "Developing programming skills through C++ and practicing logical thinking, algorithms, and problem solving."
+      },
+      {
+        "title": "Exploration",
+        "description": "Exploring different areas of computer science to discover the fields that interest me most as my education progresses."
+      },
+      {
+        "title": "Growth",
+        "description": "Turning my academic knowledge into practical skills through future projects, experimentation, and continuous practice."
+      }
+    ],
+    "metrics": [
+      {
+        "value": "1st",
+        "label": "Current semester"
+      },
+      {
+        "value": "BSCS",
+        "label": "Current degree"
+      },
+      {
+        "value": "GUTECH",
+        "label": "Current university"
+      },
+      {
+        "value": "C++",
+        "label": "Current programming language"
+      },
+      {
+        "value": "2",
+        "label": "Languages spoken"
+      },
+      {
+        "value": "Pakistan",
+        "label": "Nationality"
+      }
+    ]
+  },
+
+  "skills": [
+    {
+      "category": "Programming",
+      "description": "Foundational programming skills currently being developed through academic study and practice.",
+      "items": [
+        "C++",
+        "Programming Fundamentals",
+        "Variables",
+        "Data Types",
+        "Conditional Statements",
+        "Loops",
+        "Functions",
+        "Basic Input and Output",
+        "Basic Program Structure"
+      ]
+    },
+    {
+      "category": "Computer Science",
+      "description": "Core computer science concepts that I am beginning to study and develop.",
+      "items": [
+        "Problem Solving",
+        "Computational Thinking",
+        "Algorithms Fundamentals",
+        "Data Structures Fundamentals",
+        "Logical Thinking",
+        "Programming Concepts",
+        "Computer Fundamentals"
+      ]
+    },
+    {
+      "category": "Personal Development",
+      "description": "Skills and habits that support my growth as a computer science student.",
+      "items": [
+        "Continuous Learning",
+        "Self Learning",
+        "Research",
+        "Curiosity",
+        "Persistence",
+        "Logical Thinking",
+        "Time Management",
+        "Adaptability"
+      ]
+    },
+    {
+      "category": "Future Skills",
+      "description": "Areas I plan to explore and develop throughout my computer science degree.",
+      "items": [
+        "Advanced Programming",
+        "Object Oriented Programming",
+        "Data Structures",
+        "Algorithms",
+        "Database Systems",
+        "Web Development",
+        "Software Engineering",
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Computer Networks",
+        "Cybersecurity",
+        "Cloud Computing"
+      ]
+    }
+  ],
+
+  "learningJourney": {
+    "title": "My Learning Journey",
+    "description": "I am currently at the beginning of my computer science journey. My goal is to develop my skills step by step rather than rushing through technologies without understanding the fundamentals.",
+    "currentStage": {
+      "title": "First Semester",
+      "description": "My current focus is understanding the fundamentals of computer science, programming, and logical problem solving.",
+      "focusAreas": [
+        "Learning C++",
+        "Understanding programming fundamentals",
+        "Improving problem solving",
+        "Understanding computer science concepts",
+        "Building consistent study habits"
+      ]
+    },
+    "nextStage": {
+      "title": "Building Strong Foundations",
+      "description": "As I progress through my degree, I want to strengthen my programming knowledge and begin working on practical projects.",
+      "focusAreas": [
+        "Object Oriented Programming",
+        "Data Structures",
+        "Algorithms",
+        "Database Systems",
+        "Software Development"
+      ]
+    },
+    "futureStage": {
+      "title": "Professional Development",
+      "description": "In the future, I want to gain practical experience through projects, internships, collaboration, and real-world software development.",
+      "focusAreas": [
+        "Real-world projects",
+        "Internships",
+        "Team development",
+        "Open source",
+        "Advanced technologies",
+        "Professional experience"
+      ]
+    }
+  },
+
+  "work": [],
+
+  "experience": {
+    "title": "Experience",
+    "description": "I am currently focused on my education and building my technical foundation. As a first-semester student, I do not yet have professional work experience in the technology industry.",
+    "currentFocus": [
+      "Academic learning",
+      "Programming practice",
+      "C++ learning",
+      "Computer science fundamentals",
+      "Personal development"
+    ],
+    "futureGoals": [
+      "Complete programming projects",
+      "Participate in student activities",
+      "Work on collaborative projects",
+      "Build practical software",
+      "Gain internship experience",
+      "Develop professional skills"
+    ]
+  },
+
+  "projects": [
+    {
+      "title": "Personal Portfolio",
+      "description": "A modern, responsive portfolio website built with clean HTML5, CSS3, and JavaScript to showcase coursework, skills, and projects.",
+      "image": "images/project-portfolio.svg",
+      "stack": ["HTML5", "CSS3", "JavaScript"],
+      "outcome": "Established personal web presence and automated data loading.",
+      "liveUrl": "https://mohammadumarjawad64-web.github.io/Muhammad-Umar-portfolio/",
+      "codeUrl": "https://github.com/mohammadumarjawad64-web/Muhammad-Umar-portfolio"
+    },
+    {
+      "title": "First C++ Program",
+      "description": "Practicing core C++ programming fundamentals, data types, conditional branching, iteration loops, and console terminal I/O.",
+      "image": "images/project-cpp.svg",
+      "stack": ["C++", "Algorithms", "Console"],
+      "outcome": "Strengthened problem-solving habits and foundational syntax.",
+      "liveUrl": "",
+      "codeUrl": "https://github.com/mohammadumarjawad64-web"
+    },
+    {
+      "title": "Student Management Program",
+      "description": "A structured academic system to store, view, and manage student information and records using C++ classes and data modeling.",
+      "image": "images/project-student-mgmt.svg",
+      "stack": ["C++", "OOP", "Data Structures"],
+      "outcome": "Applied object-oriented principles to real-world record keeping.",
+      "liveUrl": "",
+      "codeUrl": "https://github.com/mohammadumarjawad64-web"
+    },
+    {
+      "title": "Simple Calculator",
+      "description": "A functional calculator application focused on modular function design, user input handling, and arithmetic operation workflows.",
+      "image": "images/project-calculator.svg",
+      "stack": ["C++", "Logic", "Functions"],
+      "outcome": "Enhanced modular programming and control flow handling.",
+      "liveUrl": "",
+      "codeUrl": "https://github.com/mohammadumarjawad64-web"
+    }
+  ],
+
+  "projectJourney": {
+    "title": "Projects",
+    "description": "I am currently in my first semester and have not yet completed major software projects. I plan to use my portfolio to document my projects as I learn and build new things.",
+    "currentStatus": "Learning and preparing for future projects.",
+    "plannedProjects": [
+      {
+        "title": "First C++ Program",
+        "description": "A simple beginner programming project focused on practicing basic C++ syntax, input, output, variables, conditions, and loops.",
+        "status": "Planned",
+        "technologies": [
+          "C++"
+        ]
+      },
+      {
+        "title": "Student Management Program",
+        "description": "A future beginner-level project that could be used to practice storing and managing student information using C++.",
+        "status": "Future",
+        "technologies": [
+          "C++"
+        ]
+      },
+      {
+        "title": "Simple Calculator",
+        "description": "A beginner programming project designed to practice functions, user input, arithmetic operations, and conditional logic.",
+        "status": "Future",
+        "technologies": [
+          "C++"
+        ]
+      },
+      {
+        "title": "Personal Portfolio",
+        "description": "This personal website is one of my first steps toward creating an online presence where I can document my education, skills, learning journey, and future projects.",
+        "status": "Current",
+        "technologies": [
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ]
+      }
+    ]
+  },
+
+  "certificates": [],
+
+  "certifications": {
+    "title": "Certifications",
+    "description": "I currently do not have professional certifications. As I progress through my studies, I plan to explore relevant certifications and learning opportunities.",
+    "status": "No professional certifications yet",
+    "futureAreas": [
+      "Programming",
+      "Cloud Computing",
+      "Cybersecurity",
+      "Artificial Intelligence",
+      "Software Development",
+      "Computer Science"
+    ]
+  },
+
+  "education": [
+    {
+      "institution": "GUTECH",
+      "campus": "Karongi",
+      "area": "Computer Science",
+      "studyType": "Bachelor of Science in Computer Science",
+      "shortStudyType": "BSCS",
+      "status": "Currently Studying",
+      "semester": "First Semester",
+      "detailsLabel": "Current Focus",
+      "details": [
+        "Computer Science Fundamentals",
+        "Programming",
+        "C++",
+        "Problem Solving",
+        "Logical Thinking"
+      ],
+      "startDate": "",
+      "endDate": "",
+      "description": "Currently pursuing a Bachelor of Science in Computer Science at GUTECH, Karongi. I am in my first semester and focusing on building a strong foundation in programming and computer science."
+    }
+  ],
+
+  "educationGoals": {
+    "title": "Academic Goals",
+    "goals": [
+      "Build a strong foundation in computer science",
+      "Become comfortable with multiple programming languages",
+      "Develop strong problem-solving abilities",
+      "Understand data structures and algorithms",
+      "Learn software development principles",
+      "Complete meaningful academic projects",
+      "Gain practical experience",
+      "Participate in internships",
+      "Explore different areas of computer science",
+      "Graduate with strong technical knowledge"
+    ]
+  },
+
+  "languages": [
+    {
+      "language": "Urdu",
+      "fluency": "Native",
+      "type": "Spoken"
+    },
+    {
+      "language": "English",
+      "fluency": "Fluent",
+      "type": "Spoken"
+    }
+  ],
+
+  "career": {
+    "title": "Career Goal",
+    "goal": "Computer Scientist",
+    "shortGoal": "Become a Computer Scientist",
+    "description": "My long-term career goal is to become a Computer Scientist. I want to build a strong understanding of computer science, develop advanced programming skills, gain practical experience, and eventually contribute to meaningful technology and software solutions.",
+    "motivation": "I am interested in understanding how technology works and how computer science can be used to solve real-world problems.",
+    "shortTermGoals": [
+      "Improve my C++ skills",
+      "Strengthen programming fundamentals",
+      "Learn data structures",
+      "Learn algorithms",
+      "Build my first real projects",
+      "Improve problem-solving skills",
+      "Learn additional programming languages"
+    ],
+    "mediumTermGoals": [
+      "Build a strong portfolio",
+      "Participate in software projects",
+      "Work with other students",
+      "Learn software engineering",
+      "Explore artificial intelligence",
+      "Explore web development",
+      "Gain internship experience"
+    ],
+    "longTermGoals": [
+      "Become a Computer Scientist",
+      "Build advanced software solutions",
+      "Work on meaningful technology projects",
+      "Continue learning throughout my career",
+      "Contribute to the technology community",
+      "Develop expertise in a computer science specialization"
+    ]
+  },
+
+  "interests": {
+    "title": "Areas I Am Interested In",
+    "items": [
+      {
+        "title": "Programming",
+        "description": "I am interested in learning how programming languages are used to create software and solve problems."
+      },
+      {
+        "title": "Software Development",
+        "description": "I want to learn how complete software applications are designed, developed, tested, and maintained."
+      },
+      {
+        "title": "Artificial Intelligence",
+        "description": "Artificial intelligence is an area I would like to explore more as my computer science knowledge develops."
+      },
+      {
+        "title": "Web Development",
+        "description": "I am interested in learning how modern websites and web applications are created."
+      },
+      {
+        "title": "Computer Systems",
+        "description": "I want to understand more about how computers and software systems work internally."
+      },
+      {
+        "title": "Problem Solving",
+        "description": "I enjoy the idea of using logical thinking and programming to solve different types of problems."
+      }
+    ]
+  },
+
+  "goals": {
+    "title": "My Goals",
+    "academic": [
+      "Successfully progress through my BSCS degree",
+      "Understand fundamental computer science concepts",
+      "Improve programming skills",
+      "Develop strong mathematical and logical reasoning",
+      "Complete academic assignments and projects successfully"
+    ],
+    "technical": [
+      "Become confident with C++",
+      "Learn additional programming languages",
+      "Learn data structures and algorithms",
+      "Learn databases",
+      "Learn software engineering",
+      "Learn web development",
+      "Explore artificial intelligence",
+      "Explore cybersecurity",
+      "Understand computer networks"
+    ],
+    "professional": [
+      "Create a strong GitHub portfolio",
+      "Complete meaningful projects",
+      "Build a professional LinkedIn profile",
+      "Find internship opportunities",
+      "Gain real-world experience",
+      "Work with other developers",
+      "Prepare for a future technology career"
+    ]
+  },
+
+  "github": {
+    "username": "mohammadumarjawad64-web",
+    "repository": "Muhammad-Umar-portfolio",
+    "url": "https://github.com/mohammadumarjawad64-web/Muhammad-Umar-portfolio",
+    "description": "My personal portfolio repository where I plan to document my growth, projects, and development journey throughout my computer science education.",
+    "status": "Beginning",
+    "futureUse": [
+      "Store personal projects",
+      "Practice version control",
+      "Document programming exercises",
+      "Share future software projects",
+      "Build an open development portfolio"
+    ]
+  },
+
+  "linkedin": {
+    "username": "mohammad-umar-jawad-b80508253",
+    "url": "https://www.linkedin.com/in/mohammad-umar-jawad-b80508253/",
+    "description": "My professional profile where I can document my education, skills, interests, and future professional experiences.",
+    "status": "Student Profile"
+  },
+
+  "portfolio": {
+    "title": "Muhammad Umar Portfolio",
+    "purpose": "A personal portfolio documenting my journey as a Computer Science student.",
+    "description": "This website is a representation of my current academic journey, interests, skills, goals, and future development as a Computer Science student.",
+    "sections": [
+      "Home",
+      "About Me",
+      "Education",
+      "Skills",
+      "Learning Journey",
+      "Projects",
+      "Career Goals",
+      "Interests",
+      "Contact"
+    ],
+    "futureUpdates": [
+      "Add completed projects",
+      "Add programming achievements",
+      "Add certifications",
+      "Add internships",
+      "Add technical skills",
+      "Add GitHub projects",
+      "Add academic achievements",
+      "Update career goals"
+    ]
+  },
+
+  "studentProfile": {
+    "title": "Student Profile",
+    "name": "Muhammad Umar",
+    "status": "BSCS Student",
+    "semester": "First Semester",
+    "university": "GUTECH",
+    "campus": "Karongi",
+    "nationality": "Pakistani",
+    "careerGoal": "Computer Scientist",
+    "currentProgrammingLanguage": "C++",
+    "experienceLevel": "Beginner",
+    "professionalExperience": false,
+    "projectExperience": "Beginning",
+    "certifications": false
+  },
+
+  "personalStatement": {
+    "short": "I am a first-semester BSCS student at GUTECH, building my foundation in programming and computer science with the goal of becoming a Computer Scientist.",
+    "medium": "I am Muhammad Umar, a Pakistani BSCS student at GUTECH in Karongi. Currently in my first semester, I am learning C++ and developing my understanding of programming, problem solving, and computer science fundamentals. My goal is to continue learning, build practical projects, and become a Computer Scientist.",
+    "long": "I am Muhammad Umar, a Pakistani student currently pursuing a Bachelor of Science in Computer Science at GUTECH in Karongi. As a first-semester student, I am at the beginning of an exciting journey into the world of computer science. I am currently developing my programming fundamentals and learning C++. I am interested in understanding how computers and software work, solving problems through programming, and exploring different areas of technology. I do not yet have extensive professional experience or a large project portfolio, but I see that as part of my journey. My goal is to learn consistently, build practical skills, create meaningful projects as I progress through university, and eventually become a Computer Scientist."
+  },
+
+  "contact": {
+    "email": "mohammadumarjawad64@gmail.com",
+    "country": "Pakistan",
+    "preferredContact": "Email",
+    "linkedin": "https://www.linkedin.com/in/mohammad-umar-jawad-b80508253/",
+    "github": "https://github.com/mohammadumarjawad64-web/Muhammad-Umar-portfolio"
+  },
+
+  "website": {
+    "owner": "Muhammad Umar",
+    "role": "Computer Science Student",
+    "tagline": "Learning today. Building tomorrow.",
+    "alternativeTaglines": [
+      "Aspiring Computer Scientist.",
+      "Learning. Building. Growing.",
+      "Beginning my journey in Computer Science.",
+      "Exploring technology one step at a time.",
+      "Building the foundation for my future in technology."
+    ],
+    "theme": {
+      "style": "Modern",
+      "personality": "Student, clean, professional, and technology-focused",
+      "tone": "Friendly and professional"
+    }
+  }
+}
