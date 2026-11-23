@@ -24,9 +24,9 @@ const UI_TRANSLATIONS = {
         titleProjects: 'Featured Projects',
         titleEducation: 'Education & Certifications',
         footerTagline: 'Aspiring Computer Scientist.',
-        switchText: 'اردو / Gray',
-        switchTitle: 'Switch to Urdu & Gray/Black Theme',
-        switchAria: 'Switch to Urdu and Gray Theme',
+        switchText: 'Urdu',
+        switchTitle: 'Switch to Urdu',
+        switchAria: 'Switch to Urdu',
         websiteBtn: 'Website',
         codeBtn: 'Code',
         outcomeLabel: 'Outcome:',
@@ -58,9 +58,9 @@ const UI_TRANSLATIONS = {
         titleProjects: 'نمایاں پروجیکٹس',
         titleEducation: 'تعلیم اور اسناد',
         footerTagline: 'پرعزم کمپیوٹر سائنٹسٹ۔',
-        switchText: 'English / Navy',
-        switchTitle: 'Switch to English & Navy Theme',
-        switchAria: 'انگریزی اور نیوی تھیم پر واپس جائیں',
+        switchText: 'English',
+        switchTitle: 'Switch to English',
+        switchAria: 'Switch to English',
         websiteBtn: 'ویب سائٹ',
         codeBtn: 'کوڈ',
         outcomeLabel: 'حاصل شدہ نتیجہ:',
@@ -133,14 +133,12 @@ function renderCurrentView() {
 function applyMode(mode, shouldRerender = true) {
     const isUrdu = mode === 'ur';
     
-    // Toggle theme and language classes
+    // Toggle the page language while keeping one consistent visual theme
     if (isUrdu) {
-        document.body.classList.add('theme-gray-black');
         document.body.classList.add('lang-ur');
         document.documentElement.setAttribute('lang', 'ur');
         document.documentElement.setAttribute('dir', 'rtl');
     } else {
-        document.body.classList.remove('theme-gray-black');
         document.body.classList.remove('lang-ur');
         document.documentElement.setAttribute('lang', 'en');
         document.documentElement.setAttribute('dir', 'ltr');
@@ -527,7 +525,7 @@ function renderResume(resume, basics) {
         </div>
         <div class="resume-cta-group">
             <a href="resume.html" target="_blank" class="btn btn-primary">
-                <i class="fas fa-eye"></i> ${currentMode === 'ur' ? 'سی وی دیکھیں (ویب)' : 'View Full Resume (Web)'}
+                <i class="fas fa-eye"></i> ${currentMode === 'ur' ? 'سی وی دیکھیں (ویب)' : 'Resume Building with LaTeX'}
             </a>
             <a href="resume.html" target="_blank" onclick="window.open('resume.html');" class="btn btn-secondary">
                 <i class="fas fa-print"></i> ${currentMode === 'ur' ? 'پرنٹ / پی ڈی ایف' : 'Print / Save PDF'}
