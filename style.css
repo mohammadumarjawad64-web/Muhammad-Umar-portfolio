@@ -1370,39 +1370,6 @@ body {
     max-width: 1160px;
 }
 
-.portfolio-banner {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.8rem 1rem;
-    padding: 0.65rem 1.25rem;
-    color: var(--primary-dark);
-    background: #e8eee8;
-    border-bottom: 1px solid var(--border-subtle);
-    font-size: 0.84rem;
-    font-weight: 600;
-}
-
-.portfolio-banner a {
-    padding: 0.4rem 0.9rem;
-    border-radius: 999px;
-    color: #fffefa;
-    background: var(--primary-dark);
-    text-decoration: none;
-    font-size: 0.78rem;
-    font-weight: 700;
-    transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.portfolio-banner a:hover {
-    background: #344f43;
-    transform: translateY(-1px);
-}
-
 header {
     background: var(--glass);
     border-bottom-color: var(--glass-border);
@@ -1705,10 +1672,6 @@ footer p {
         padding: 3.75rem 0;
     }
 
-    .portfolio-banner {
-        padding: 0.6rem 0.85rem;
-        font-size: 0.76rem;
-    }
 }
 
 button:focus-visible,
