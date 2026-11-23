@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#101827">
+  <title>Blog Admin — Muhammad Umar</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="blog.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Charter:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="blog-page admin-page">
+  <header class="blog-topbar"><a href="blog.html" class="blog-brand"><span class="blog-brand-mark">MU</span><span>Blog Studio <small>Private admin</small></span></a><nav><a href="blog.html">View blog</a><a href="index.html">Portfolio</a></nav></header>
+  <main class="admin-shell">
+    <section id="firebase-setup-note" class="setup-note" hidden><i class="fa-solid fa-circle-info"></i><div><strong>Connect your Firebase project</strong><p>Firebase settings are missing. Configure <code>firebase-config.js</code> and deploy <code>firestore.rules</code>. Blog images use direct image URLs, so this project does not need Firebase Storage.</p></div></section>
+    <section id="login-panel" class="login-panel"><p class="eyebrow">PRIVATE WORKSPACE</p><h1>Sign in to publish.</h1><p>Only the verified administrator account can write or manage posts. We’ll email you a secure sign-in link.</p><form id="login-form"><label>Email address<input id="login-email" type="email" autocomplete="email" required></label><button class="blog-button primary" type="submit"><i class="fa-solid fa-envelope"></i> Send sign-in link</button><p id="login-message" class="form-message" role="status"></p></form><a href="blog.html" class="back-link">← Return to the blog</a></section>
+    <section id="studio-panel" class="studio-panel" hidden>
+      <div class="studio-heading"><div><p class="eyebrow">BLOG STUDIO</p><h1>Write something worth sharing.</h1></div><button id="logout-button" class="blog-button subtle" type="button"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sign out</button></div>
+      <div class="studio-layout"><form id="post-form" class="post-form">
+        <input id="post-id" type="hidden"><label>Article title<input id="post-title" maxlength="160" required placeholder="A clear, memorable title"></label>
+        <label>Short summary<textarea id="post-excerpt" maxlength="500" rows="3" required placeholder="What will readers learn?"></textarea></label>
+        <div class="form-row"><label>Tags <span class="hint">comma separated</span><input id="post-tags" placeholder="Learning, JavaScript"></label><label>Cover image URL <span class="hint">Optional · use a direct image link</span><input id="post-cover" type="url" placeholder="https://example.com/cover.webp"></label></div>
+        <img id="cover-preview" class="cover-preview" alt="Selected cover preview" hidden>
+        <label>Article body</label><div class="editor-toolbar" role="toolbar" aria-label="Formatting tools"><button type="button" data-command="formatBlock" data-value="h2" title="Heading"><i class="fa-solid fa-heading"></i></button><button type="button" data-command="bold" title="Bold"><i class="fa-solid fa-bold"></i></button><button type="button" data-command="italic" title="Italic"><i class="fa-solid fa-italic"></i></button><button type="button" data-command="insertUnorderedList" title="Bulleted list"><i class="fa-solid fa-list-ul"></i></button><button type="button" data-command="formatBlock" data-value="blockquote" title="Quote"><i class="fa-solid fa-quote-left"></i></button><button type="button" id="insert-link" title="Insert link"><i class="fa-solid fa-link"></i></button><button type="button" id="insert-youtube" title="Embed YouTube video"><i class="fa-brands fa-youtube"></i> Video</button></div>
+        <div id="post-content" class="rich-editor" contenteditable="true" data-placeholder="Write your article here. Use the toolbar to format text or embed a YouTube video URL."></div>
+        <div class="publish-row"><label class="publish-toggle"><input id="post-published" type="checkbox"><span class="toggle-ui"></span><span><strong>Publish now</strong><small>Published posts are visible to everyone.</small></span></label><span id="save-message" class="form-message" role="status"></span></div>
+        <div class="form-actions"><button class="blog-button primary" type="submit"><i class="fa-solid fa-floppy-disk"></i> Save post</button><button id="new-post" class="blog-button subtle" type="button">New post</button></div>
+      </form><aside class="post-list-panel"><div class="list-heading"><h2>Your articles</h2><span id="post-count">0</span></div><div id="admin-post-list" class="admin-post-list"><p class="muted">Your saved posts will appear here.</p></div></aside></div>
+    </section>
+  </main>
+  <script type="module" src="blog-admin.js"></script>
+</body>
+</html>

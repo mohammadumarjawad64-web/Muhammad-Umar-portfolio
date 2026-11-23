@@ -1,0 +1,168 @@
+%-------------------------
+% Resume in LaTeX
+% Author : Muhammad Umar
+% License : MIT
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Muhammad Umar} \\ \vspace{4pt}
+    \small Karachi (KAECHS Block 5), Pakistan $|$ \href{tel:03072066060}{(0307) 2066060} $|$ 
+    \href{mailto:Mohammadumarjawad64@gmail.com}{\underline{Mohammadumarjawad64@gmail.com}} \\ \vspace{2pt}
+    \href{https://linkedin.com/in/mohammad-umar-jawad-b80508253/}{\underline{linkedin.com/in/mohammad-umar-jawad}} $|$
+    \href{https://github.com/mohammadumarjawad64-web}{\underline{github.com/mohammadumarjawad64-web}} $|$
+    \href{https://unscroll-seven.vercel.app/}{\underline{unscroll-seven.vercel.app}}
+\end{center}
+
+%-----------OBJECTIVE-----------
+\section{Professional Summary}
+\small{
+  A motivated and detail-oriented Computer Science student with a strong academic foundation from Intermediate. Eager to apply software engineering knowledge, learn modern technologies, and contribute effectively in challenging technical roles. Seeking an entry-level software or internship position to develop robust applications and add value to engineering teams.
+}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {GUTECH (German University of Technology)}{Karongi, Pakistan}
+      {Bachelor of Science in Computer Science (BSCS)}{2026 -- Present}
+      \resumeItemListStart
+        \resumeItem{Focus areas: Programming Fundamentals (C++), Problem Solving, Object-Oriented Programming, and Data Structures.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Sindh Board of Secondary \& Intermediate Education}{Karachi, Pakistan}
+      {Higher Secondary Certificate (HSC) -- Intermediate in Computer Science}{Graduated}
+    \resumeSubheading
+      {Sindh Board of Secondary \& Intermediate Education}{Karachi, Pakistan}
+      {Secondary School Certificate (SSC) -- Matriculation in Computer Science}{Graduated}
+  \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C++, JavaScript (ES6+), HTML5, CSS3, SQL} \\
+     \textbf{Developer Tools}{: Git, GitHub, VS Code, Vercel, Node.js, Vite} \\
+     \textbf{Core Competencies}{: Object-Oriented Programming (OOP), Data Structures, Algorithms, Responsive Design, State Management} \\
+     \textbf{Productivity \& Management}{: Project Management, MS Office (Word, Excel, PowerPoint), Customer Service, Operational Logistics}
+    }}
+ \end{itemize}
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Unscroll (App Controller)} $|$ \emph{JavaScript, HTML5, CSS3, Chart.js, LocalStorage, Vercel}}{2026}
+          \resumeItemListStart
+            \resumeItem{Engineered a digital well-being web app deployed live on Vercel (\href{https://unscroll-seven.vercel.app/}{\underline{unscroll-seven.vercel.app}}).}
+            \resumeItem{Implemented 24-hour Strict Buzurg lockout enforcement with cryptographic emergency bypass safeguards.}
+            \resumeItem{Created PIN-protected parental supervision controls and real-time screen time analytics with Chart.js.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Bizzone -- Modern E-Commerce Storefront} $|$ \emph{React / Node.js, CSS Modules, REST API}}{2026}
+          \resumeItemListStart
+            \resumeItem{Architected a responsive multi-brand e-commerce shopping experience with interactive catalog browsing and cart state.}
+            \resumeItem{Designed streamlined checkout pathways, product category filters, and clean product detail modals.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{GUtech Academic Student Portal} $|$ \emph{React, Vite, CSS, Component Architecture}}{2026}
+          \resumeItemListStart
+            \resumeItem{Developed an academic portal interface for student course scheduling, GPA analytics, and department notifications.}
+            \resumeItem{Engineered modular UI components ensuring high performance and responsive mobile accessibility.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{C++ Console & Student Records Manager} $|$ \emph{C++, OOP, File I/O}}{2026}
+          \resumeItemListStart
+            \resumeItem{Implemented an in-memory student record manager using classes, dynamic arrays, search algorithms, and file streams.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Operations \& Customer Service Specialist}{Karachi, Pakistan}
+      {Family-Owned Commercial Business}{2024 -- 2026}
+      \resumeItemListStart
+        \resumeItem{Managed daily sales transactions, customer relationships, and inventory auditing across three distant store branches.}
+        \resumeItem{Delivered consistent, positive client service, resolving complex operational bottlenecks across fast-paced environments.}
+        \resumeItem{Adapted procedures to site-specific demands, streamlining local supply workflows and boosting customer satisfaction.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}

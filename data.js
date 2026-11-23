@@ -1,4 +1,3 @@
-// Fallback portfolio data allowing the website to work both on local web servers and directly via file://
 window.PORTFOLIO_DATA = {
   "basics": {
     "name": "Muhammad Umar",
@@ -10,11 +9,12 @@ window.PORTFOLIO_DATA = {
     "location": {
       "country": "Pakistan",
       "countryCode": "PK",
-      "region": "Karongi",
-      "city": "Karongi"
+      "region": "Sindh",
+      "city": "Karachi",
+      "address": "Karachi (KAECHS block 5)"
     },
     "nationality": "Pakistani",
-    "email": "mohammadumarjawad64@gmail.com",
+    "email": "Mohammadumarjawad64@gmail.com",
     "availability": "Currently studying Bachelor of Science in Computer Science at GUTECH.",
     "studentStatus": "First Semester Student",
     "careerGoal": "Computer Scientist",
@@ -29,10 +29,17 @@ window.PORTFOLIO_DATA = {
       {
         "network": "GitHub",
         "username": "mohammadumarjawad64-web",
-        "url": "https://github.com/mohammadumarjawad64-web/Muhammad-Umar-portfolio",
+        "url": "https://github.com/mohammadumarjawad64-web",
         "icon": "fa-brands fa-github"
+      },
+      {
+        "network": "LeetCode",
+        "username": "mohammadumarjawad64",
+        "url": "https://leetcode.com/u/mohammadumarjawad64/",
+        "icon": "fa-solid fa-code"
       }
-    ]
+    ],
+    "phone": "(0307) 2066060"
   },
   "cs": {
     "name": "Muhammad Umar",
@@ -261,7 +268,18 @@ window.PORTFOLIO_DATA = {
       ]
     }
   },
-  "work": [],
+  "work": [
+    {
+      "company": "Family-Owned Commercial Business",
+      "position": "Operations & Customer Service Specialist",
+      "website": "#",
+      "startDate": "2024-01-01",
+      "endDate": "2026-01-01",
+      "location": "Karachi, Pakistan",
+      "summary": "Dedicated team member gaining hands-on commercial experience across three distinct branch locations over a two-year period.",
+      "impact": "Supervised customer relationships, daily sales transactions, and inventory auditing while resolving complex operational bottlenecks across fast-paced environments."
+    }
+  ],
   "experience": {
     "title": "Experience",
     "description": "I am currently focused on my education and building my technical foundation. As a first-semester student, I do not yet have professional work experience in the technology industry.",
@@ -283,38 +301,59 @@ window.PORTFOLIO_DATA = {
   },
   "projects": [
     {
-      "title": "Personal Portfolio",
-      "description": "A modern, responsive portfolio website built with clean HTML5, CSS3, and JavaScript to showcase coursework, skills, and projects.",
-      "image": "images/project-portfolio.svg",
-      "stack": ["HTML5", "CSS3", "JavaScript"],
-      "outcome": "Established personal web presence and automated data loading.",
-      "liveUrl": "https://mohammadumarjawad64-web.github.io/Muhammad-Umar-portfolio/",
-      "codeUrl": "https://github.com/mohammadumarjawad64-web/Muhammad-Umar-portfolio"
+      "title": "Unscroll (App Controller) — Digital Well-Being",
+      "description": "A modern digital well-being web application featuring 24-hour Strict Buzurg lockouts, parental remote controls, and real-time Chart.js screen-time telemetry.",
+      "image": "images/project-unscroll.svg",
+      "stack": [
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Chart.js",
+        "Vercel"
+      ],
+      "outcome": "Deployed live on Vercel helping users manage screen time and stay productive.",
+      "liveUrl": "https://unscroll-seven.vercel.app/",
+      "codeUrl": "https://github.com/mohammadumarjawad64-web"
     },
     {
-      "title": "First C++ Program",
-      "description": "Practicing core C++ programming fundamentals, data types, conditional branching, iteration loops, and console terminal I/O.",
+      "title": "Bizzone — Your Brand, Your Online Store",
+      "description": "An intuitive multi-brand e-commerce shopping platform with dynamic catalog browsing, real-time cart state, and streamlined checkout.",
+      "image": "images/project-bizzone.svg",
+      "stack": [
+        "React",
+        "JavaScript",
+        "CSS Modules",
+        "E-Commerce"
+      ],
+      "outcome": "Architected responsive online storefront layouts and modular product discovery components.",
+      "liveUrl": "http://localhost:3000/",
+      "codeUrl": "https://github.com/mohammadumarjawad64-web"
+    },
+    {
+      "title": "GUtech Academic Student Portal",
+      "description": "A dedicated academic portal interface for student course scheduling, GPA analytics, attendance tracking, and department notifications.",
+      "image": "images/project-gutech.svg",
+      "stack": [
+        "React",
+        "Vite",
+        "Tailwind/CSS",
+        "Component UI"
+      ],
+      "outcome": "Centralized university student workflows and timetable tracking into a high-performance portal.",
+      "liveUrl": "http://localhost:5173/",
+      "codeUrl": "https://github.com/mohammadumarjawad64-web"
+    },
+    {
+      "title": "C++ Console & Student Records Manager",
+      "description": "Core C++ algorithmic system implementing object-oriented programming, dynamic arrays, search algorithms, and file streams for student record keeping.",
       "image": "images/project-cpp.svg",
-      "stack": ["C++", "Algorithms", "Console"],
-      "outcome": "Strengthened problem-solving habits and foundational syntax.",
-      "liveUrl": "",
-      "codeUrl": "https://github.com/mohammadumarjawad64-web"
-    },
-    {
-      "title": "Student Management Program",
-      "description": "A structured academic system to store, view, and manage student information and records using C++ classes and data modeling.",
-      "image": "images/project-student-mgmt.svg",
-      "stack": ["C++", "OOP", "Data Structures"],
-      "outcome": "Applied object-oriented principles to real-world record keeping.",
-      "liveUrl": "",
-      "codeUrl": "https://github.com/mohammadumarjawad64-web"
-    },
-    {
-      "title": "Simple Calculator",
-      "description": "A functional calculator application focused on modular function design, user input handling, and arithmetic operation workflows.",
-      "image": "images/project-calculator.svg",
-      "stack": ["C++", "Logic", "Functions"],
-      "outcome": "Enhanced modular programming and control flow handling.",
+      "stack": [
+        "C++",
+        "OOP",
+        "Data Structures",
+        "Algorithms"
+      ],
+      "outcome": "Solidified algorithmic problem-solving habits and foundational syntax.",
       "liveUrl": "",
       "codeUrl": "https://github.com/mohammadumarjawad64-web"
     }
@@ -376,24 +415,38 @@ window.PORTFOLIO_DATA = {
   },
   "education": [
     {
-      "institution": "GUTECH",
-      "campus": "Karongi",
+      "institution": "GUTECH (German University of Technology)",
+      "campus": "Karongi, Pakistan",
       "area": "Computer Science",
       "studyType": "Bachelor of Science in Computer Science",
       "shortStudyType": "BSCS",
       "status": "Currently Studying",
       "semester": "First Semester",
-      "detailsLabel": "Current Focus",
-      "details": [
-        "Computer Science Fundamentals",
-        "Programming",
-        "C++",
-        "Problem Solving",
-        "Logical Thinking"
-      ],
-      "startDate": "",
+      "startDate": "2026-01-01",
       "endDate": "",
-      "description": "Currently pursuing a Bachelor of Science in Computer Science at GUTECH, Karongi. I am in my first semester and focusing on building a strong foundation in programming and computer science."
+      "description": "Core coursework: Programming Fundamentals (C++), Object-Oriented Programming, Discrete Math & Computational Thinking."
+    },
+    {
+      "institution": "Sindh Board of Secondary & Intermediate Education",
+      "campus": "Karachi, Pakistan",
+      "area": "Computer Science",
+      "studyType": "Higher Secondary Certificate (HSC) — Intermediate",
+      "shortStudyType": "HSC",
+      "status": "Completed",
+      "startDate": "2022-01-01",
+      "endDate": "2024-01-01",
+      "description": "Graduated with strong foundations in Computer Science, Mathematics, and Physics."
+    },
+    {
+      "institution": "Sindh Board of Secondary & Intermediate Education",
+      "campus": "Karachi, Pakistan",
+      "area": "Computer Science",
+      "studyType": "Secondary School Certificate (SSC) — Matriculation",
+      "shortStudyType": "SSC",
+      "status": "Completed",
+      "startDate": "2020-01-01",
+      "endDate": "2022-01-01",
+      "description": "Completed secondary education in Computer Science."
     }
   ],
   "educationGoals": {
@@ -604,5 +657,363 @@ window.PORTFOLIO_DATA = {
       "personality": "Student, clean, professional, and technology-focused",
       "tone": "Friendly and professional"
     }
+  },
+  "leetcode": {
+    "username": "mohammadumarjawad64",
+    "url": "https://leetcode.com/u/mohammadumarjawad64/",
+    "solved": 58,
+    "easy": 38,
+    "medium": 18,
+    "hard": 2,
+    "acceptance": "68.4%",
+    "ranking": "Top 25%",
+    "skills": [
+      "C++",
+      "Arrays & Strings",
+      "Two Pointers",
+      "Hash Table",
+      "Math & Logic",
+      "Sorting"
+    ]
+  },
+  "resume": {
+    "title": "Curriculum Vitae",
+    "format": "LaTeX (Jake's Resume / Overleaf Format)",
+    "webUrl": "resume.html",
+    "texUrl": "resume.tex",
+    "summary": "A motivated and detail-oriented Computer Science student with a strong academic foundation from Intermediate. Eager to apply software engineering knowledge, learn modern technologies, and contribute effectively."
+  }
+};
+
+window.PORTFOLIO_DATA_UR = {
+  "basics": {
+    "name": "محمد عمر",
+    "shortName": "محمد عمر",
+    "image": "images/profile.svg",
+    "label": "کمپیوٹر سائنس کا طالب علم",
+    "headline": "ایک ابھرتا ہوا کمپیوٹر سائنٹسٹ جو پروگرامنگ، ٹیکنالوجی اور کمپیوٹر سائنس کی دنیا کو دریافت کر رہا ہے۔",
+    "summary": "میں گوٹیک (GUTECH) کرونگی میں بی ایس سی ایس (BSCS) کے پہلے سمسٹر کا طالب علم ہوں۔ میں کمپیوٹر سائنس کے سفر کے آغاز میں ہوں اور اس وقت پروگرامنگ کی مضبوط بنیاد بنانے، C++ سیکھنے، مسائل کے حل کی صلاحیت نکھارنے اور جدید ٹیکنالوجیز کو سمجھنے پر توجہ دے رہا ہوں۔",
+    "location": {
+      "country": "پاکستان",
+      "countryCode": "PK",
+      "region": "سندھ",
+      "city": "کراچی",
+      "address": "کراچی (KAECHS بلاک 5)"
+    },
+    "nationality": "پاکستانی",
+    "email": "Mohammadumarjawad64@gmail.com",
+    "availability": "گوٹیک میں بیچلر آف سائنس ان کمپیوٹر سائنس کے زیر تعلیم۔",
+    "studentStatus": "پہلا سمسٹر",
+    "careerGoal": "کمپیوٹر سائنٹسٹ",
+    "leadershipNote": "تعلیمی سفر کے آغاز پر میرا فوکس مسلسل سیکھنے، مضبوط تکنیکی بنیاد بنانے اور کمپیوٹر سائنس میں مستقبل کے مواقع کے لیے تیاری پر ہے۔",
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "mohammad-umar-jawad-b80508253",
+        "url": "https://www.linkedin.com/in/mohammad-umar-jawad-b80508253/",
+        "icon": "fa-brands fa-linkedin-in"
+      },
+      {
+        "network": "GitHub",
+        "username": "mohammadumarjawad64-web",
+        "url": "https://github.com/mohammadumarjawad64-web",
+        "icon": "fa-brands fa-github"
+      },
+      {
+        "network": "LeetCode",
+        "username": "mohammadumarjawad64",
+        "url": "https://leetcode.com/u/mohammadumarjawad64/",
+        "icon": "fa-solid fa-code"
+      }
+    ],
+    "phone": "(0307) 2066060"
+  },
+  "about": {
+    "title": "میرے بارے میں",
+    "subtitle": "کمپیوٹر سائنس میں اپنے سفر کا آغاز کرنے والا طالب علم۔",
+    "intro": [
+      "میرا نام محمد عمر ہے، اور میں ایک پاکستانی طالب علم ہوں جو گوٹیک (GUTECH) کرونگی میں بیچلر آف سائنس ان کمپیوٹر سائنس پڑھ رہا ہوں۔",
+      "میں فی الوقت اپنے پہلے سمسٹر میں ہوں، یعنی کمپیوٹر سائنس کے تعلیمی سفر کے بالکل آغاز پر ہوں۔ میں اس مرحلے پر پروگرامنگ کی بنیادی باتیں، کمپیوٹنگ، مسائل کا حل اور ٹیکنالوجی کو گہرائی سے سمجھ رہا ہوں۔",
+      "میں نے C++ سیکھنا شروع کی ہے اور آہستہ آہستہ پروگرامنگ کے بنیادی تصورات پر گرفت مضبوط کر رہا ہوں۔ میرا موجودہ مقصد بڑی مہارتوں کا دعویٰ کرنا نہیں بلکہ ایک مضبوط بنیاد قائم کرنا ہے جس پر آگے بڑھ سکوں۔",
+      "میرا ماننا ہے کہ کمپیوٹر سائنس میں سیکھنے کا عمل کبھی ختم نہیں ہوتا۔ ہمیشہ نئی پروگرامنگ زبانیں، فریم ورکس اور نئے چیلنجز سامنے آتے رہتے ہیں۔",
+      "میرا طویل مدتی ہدف ایک ماہر کمپیوٹر سائنٹسٹ بننا ہے۔ میں مضبوط تکنیکی علم، عملی تجربہ اور کارآمد ٹیکنالوجی سلوشنز تیار کرنا چاہتا ہوں۔",
+      "یہ پورٹ فولیو میرے سفر کا آغاز ہے۔ جیسے جیسے میں مزید سیکھوں گا اور پروجیکٹس مکمل کروں گا، میں اسے مزید بہتر اور وسیع بناتا رہوں گا۔"
+    ],
+    "strengths": [
+      "سیکھنے کا جذبہ",
+      "پروگرامنگ کی بنیادیں",
+      "C++ کی بنیادیں",
+      "مسائل کا حل",
+      "منطقی سوچ",
+      "ٹیکنالوجی کا تجسس",
+      "مسلسل ذاتی ترقی",
+      "کمپیوٹر سائنس کی بنیادیں"
+    ],
+    "interests": [
+      "کمپیوٹر سائنس",
+      "پروگرامنگ",
+      "سافٹ ویئر ڈویلپمنٹ",
+      "ٹیکنالوجی",
+      "مسائل کا حل",
+      "نئی ٹیکنالوجیز سیکھنا",
+      "کمپیوٹر سسٹمز",
+      "مستقبل کے سافٹ ویئر پروجیکٹس"
+    ],
+    "values": [
+      {
+        "title": "سیکھنا",
+        "description": "میرا ماننا ہے کہ مسلسل سیکھنا ٹیکنالوجی کے شعبے میں کامیابی کا سب سے اہم ستون ہے۔"
+      },
+      {
+        "title": "تجسس",
+        "description": "مجھے یہ جاننا پسند ہے کہ کمپیوٹر اور سافٹ ویئر کیسے کام کرتے ہیں اور سوالات پوچھ کر گہری سمجھ حاصل کرنا۔"
+      },
+      {
+        "title": "ترقی",
+        "description": "میں مشق کرنے، غلطیوں سے سیکھنے اور اپنی مہارتوں کو بتدریج بہتر بنانے پر یقین رکھتا ہوں۔"
+      },
+      {
+        "title": "ثابت قدمی",
+        "description": "کمپیوٹر سائنس میں کیریئر بنانا وقت مانگتا ہے، اس لیے میں مستقل مزاجی اور مسلسل کوشش کو اہمیت دیتا ہوں۔"
+      }
+    ],
+    "leadershipPillars": [
+      {
+        "title": "مسلسل سیکھنا",
+        "description": "کمپیوٹر سائنس میں ٹھوس تعلیمی بنیاد بنانا اور پروگرامنگ و ٹیکنالوجی کی سمجھ میں مسلسل اضافہ کرنا۔"
+      },
+      {
+        "title": "پروگرامنگ اور منطق",
+        "description": "C++ کے ذریعے کوڈنگ مہارتیں حاصل کرنا، الگورتھم کی مشق اور مسائل حل کرنے کی صلاحیت کو نکھارنا۔"
+      },
+      {
+        "title": "تحقیق و دریافت",
+        "description": "کمپیوٹر سائنس کے مختلف شعبوں کی کھوج لگانا تاکہ اپنے پسندیدہ میدان میں مہارت حاصل کی جا سکے۔"
+      },
+      {
+        "title": "عملی ترقی",
+        "description": "تعلیمی معلومات کو عملی پروجیکٹس، کوڈنگ تجربات اور مسلسل مشق کے ذریعے حقیقی مہارت میں تبدیل کرنا۔"
+      }
+    ],
+    "metrics": [
+      {
+        "value": "1st",
+        "label": "موجودہ سمسٹر"
+      },
+      {
+        "value": "BSCS",
+        "label": "ڈگری پروگرام"
+      },
+      {
+        "value": "GUTECH",
+        "label": "یونیورسٹی"
+      },
+      {
+        "value": "C++",
+        "label": "پروگرامنگ زبان"
+      },
+      {
+        "value": "2",
+        "label": "زبانیں"
+      },
+      {
+        "value": "پاکستان",
+        "label": "قومیت"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "category": "پروگرامنگ (Programming)",
+      "description": "تعلیمی مطالعہ اور مشق کے ذریعے تیار کی جانے والی بنیادی پروگرامنگ مہارتیں۔",
+      "items": [
+        "C++",
+        "پروگرامنگ کی بنیادیں",
+        "ویری ایبلز (Variables)",
+        "ڈیٹا ٹائپس (Data Types)",
+        "کنڈیشنل اسٹیٹمنٹس",
+        "لوپس (Loops)",
+        "فنکشنز (Functions)",
+        "کنسول ان پٹ / آؤٹ پٹ",
+        "پروگرام کی ساخت"
+      ]
+    },
+    {
+      "category": "کمپیوٹر سائنس (Computer Science)",
+      "description": "بنیادی کمپیوٹر سائنس تصورات جن کا میں مطالعہ کر رہا ہوں۔",
+      "items": [
+        "مسائل کا حل (Problem Solving)",
+        "کمپیوٹیشنل سوچ",
+        "الگورتھم کی بنیادیں",
+        "ڈیٹا سٹرکچرز کی بنیادیں",
+        "منطقی سوچ",
+        "پروگرامنگ کے بنیادی تصورات",
+        "کمپیوٹر کے بنیادی اصول"
+      ]
+    },
+    {
+      "category": "ذاتی و فکری ترقی (Personal Development)",
+      "description": "وہ عادات اور مہارتیں جو بطور طالب علم میری ترقی میں مددگار ہیں۔",
+      "items": [
+        "مسلسل سیکھنا",
+        "سیلف لرننگ (Self Learning)",
+        "تحقیق اور کھوج",
+        "تجسس",
+        "ثابت قدمی",
+        "منطقی سوچ",
+        "وقت کا انتظام",
+        "لچک پذیری"
+      ]
+    },
+    {
+      "category": "مستقبل کی مہارتیں (Future Skills)",
+      "description": "وہ شعبہ جات جنہیں میں اپنی ڈگری کے دوران سیکھنے کا ارادہ رکھتا ہوں۔",
+      "items": [
+        "ایڈوانس پروگرامنگ",
+        "آبجیکٹ اورینٹڈ پروگرامنگ (OOP)",
+        "ڈیٹا سٹرکچرز اور الگورتھم",
+        "ڈیٹا بیس سسٹمز",
+        "ویب ڈویلپمنٹ",
+        "سافٹ ویئر انجینئرنگ",
+        "مصنوعی ذہانت (AI)",
+        "مشین لرننگ",
+        "کمپیوٹر نیٹ ورکس",
+        "سائبر سیکیورٹی",
+        "کلاؤڈ کمپیوٹنگ"
+      ]
+    }
+  ],
+  "work": [
+    {
+      "company": "فیملی بزنس (کمرشل اسٹورز)",
+      "position": "آپریشنز اور کسٹمر سروس سپیشلسٹ",
+      "website": "#",
+      "startDate": "2024-01-01",
+      "endDate": "2026-01-01",
+      "location": "کراچی، پاکستان",
+      "summary": "دو سال کے دوران تین مختلف برانچز میں روزمرہ کے کاروباری معاملات اور کسٹمر سروس کو کامیابی سے سنبھالا۔",
+      "impact": "کسٹمر ڈیلنگ، انوینٹری مینجمنٹ اور کیش ٹرانزیکشنز کو بہتر بنایا اور آپریشنل مسائل کو مہارت سے حل کیا۔"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Unscroll (App Controller) — Digital Well-Being",
+      "description": "A modern digital well-being web application featuring 24-hour Strict Buzurg lockouts, parental remote controls, and real-time Chart.js screen-time telemetry.",
+      "image": "images/project-unscroll.svg",
+      "stack": [
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Chart.js",
+        "Vercel"
+      ],
+      "outcome": "Deployed live on Vercel helping users manage screen time and stay productive.",
+      "liveUrl": "https://unscroll-seven.vercel.app/",
+      "codeUrl": "https://github.com/mohammadumarjawad64-web"
+    },
+    {
+      "title": "Bizzone — Your Brand, Your Online Store",
+      "description": "An intuitive multi-brand e-commerce shopping platform with dynamic catalog browsing, real-time cart state, and streamlined checkout.",
+      "image": "images/project-bizzone.svg",
+      "stack": [
+        "React",
+        "JavaScript",
+        "CSS Modules",
+        "E-Commerce"
+      ],
+      "outcome": "Architected responsive online storefront layouts and modular product discovery components.",
+      "liveUrl": "http://localhost:3000/",
+      "codeUrl": "https://github.com/mohammadumarjawad64-web"
+    },
+    {
+      "title": "GUtech Academic Student Portal",
+      "description": "A dedicated academic portal interface for student course scheduling, GPA analytics, attendance tracking, and department notifications.",
+      "image": "images/project-gutech.svg",
+      "stack": [
+        "React",
+        "Vite",
+        "Tailwind/CSS",
+        "Component UI"
+      ],
+      "outcome": "Centralized university student workflows and timetable tracking into a high-performance portal.",
+      "liveUrl": "http://localhost:5173/",
+      "codeUrl": "https://github.com/mohammadumarjawad64-web"
+    },
+    {
+      "title": "C++ Console & Student Records Manager",
+      "description": "Core C++ algorithmic system implementing object-oriented programming, dynamic arrays, search algorithms, and file streams for student record keeping.",
+      "image": "images/project-cpp.svg",
+      "stack": [
+        "C++",
+        "OOP",
+        "Data Structures",
+        "Algorithms"
+      ],
+      "outcome": "Solidified algorithmic problem-solving habits and foundational syntax.",
+      "liveUrl": "",
+      "codeUrl": "https://github.com/mohammadumarjawad64-web"
+    }
+  ],
+  "certificates": [],
+  "education": [
+    {
+      "institution": "گوٹیک (GUTECH)",
+      "campus": "کرونگی، پاکستان",
+      "area": "کمپیوٹر سائنس",
+      "studyType": "بیچلر آف سائنس ان کمپیوٹر سائنس (BSCS)",
+      "shortStudyType": "BSCS",
+      "status": "زیر تعلیم",
+      "semester": "پہلا سمسٹر",
+      "startDate": "2026-01-01",
+      "endDate": "",
+      "description": "بنیادی مضامین: پروگرامنگ فاؤنڈیشنز (C++)، ڈیٹا سٹرکچرز، ڈسکریٹ میتھمیٹکس۔"
+    },
+    {
+      "institution": "سندھ بورڈ آف ایجوکیشن",
+      "campus": "کراچی، پاکستان",
+      "area": "کمپیوٹر سائنس",
+      "studyType": "انٹرمیڈیٹ (HSC) — کمپیوٹر سائنس",
+      "shortStudyType": "HSC",
+      "status": "مکمل",
+      "startDate": "2022-01-01",
+      "endDate": "2024-01-01",
+      "description": "کمپیوٹر سائنس اور ریاضی میں بہترین تعلیمی کارکردگی کے ساتھ کامیابی۔"
+    },
+    {
+      "institution": "سندھ بورڈ آف ایجوکیشن",
+      "campus": "کراچی، پاکستان",
+      "area": "کمپیوٹر سائنس",
+      "studyType": "میٹرک (SSC) — کمپیوٹر سائنس",
+      "shortStudyType": "SSC",
+      "status": "مکمل",
+      "startDate": "2020-01-01",
+      "endDate": "2022-01-01",
+      "description": "سائنس اور کمپیوٹر سائنس کی بنیادی تعلیم کی تکمیل۔"
+    }
+  ],
+  "leetcode": {
+    "username": "mohammadumarjawad64",
+    "url": "https://leetcode.com/u/mohammadumarjawad64/",
+    "solved": 58,
+    "easy": 38,
+    "medium": 18,
+    "hard": 2,
+    "acceptance": "68.4%",
+    "ranking": "Top 25%",
+    "skills": [
+      "C++",
+      "Arrays & Strings",
+      "Two Pointers",
+      "Hash Table",
+      "Math & Logic",
+      "Sorting"
+    ]
+  },
+  "resume": {
+    "title": "Curriculum Vitae",
+    "format": "LaTeX (Jake's Resume / Overleaf Format)",
+    "webUrl": "resume.html",
+    "texUrl": "resume.tex",
+    "summary": "A motivated and detail-oriented Computer Science student with a strong academic foundation from Intermediate. Eager to apply software engineering knowledge, learn modern technologies, and contribute effectively."
   }
 };

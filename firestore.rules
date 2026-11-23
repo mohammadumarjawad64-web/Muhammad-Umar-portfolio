@@ -1,0 +1,30 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email.lower() == 'mohammadumarjawad64@gmail.com'
+        && request.auth.token.email_verified == true;
+    }
+
+    match /posts/{postId} {
+      allow read: if isAdmin() || resource.data.published == true;
+      allow create, update: if isAdmin()
+        && request.resource.data.keys().hasOnly([
+          'title', 'slug', 'excerpt', 'content', 'coverImage', 'tags',
+          'author', 'published', 'createdAt', 'updatedAt', 'publishedAt', 'readingMinutes'
+        ])
+        && request.resource.data.title is string
+        && request.resource.data.title.size() > 0
+        && request.resource.data.title.size() <= 160
+        && request.resource.data.content is string
+        && request.resource.data.content.size() <= 100000
+        && request.resource.data.excerpt is string
+        && request.resource.data.excerpt.size() <= 500
+        && request.resource.data.tags is list
+        && request.resource.data.tags.size() <= 8
+        && request.resource.data.published is bool;
+      allow delete: if isAdmin();
+    }
+  }
+}

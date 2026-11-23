@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgUnscroll" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#061c14" />
+      <stop offset="100%" stop-color="#020906" />
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <filter id="glowUnscroll" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#000000" flood-opacity="0.8" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="340" fill="url(#bgUnscroll)" />
+
+  <!-- Grid lines -->
+  <g stroke="rgba(16, 185, 129, 0.08)" stroke-width="1">
+    <line x1="0" y1="60" x2="600" y2="60" />
+    <line x1="0" y1="120" x2="600" y2="120" />
+    <line x1="0" y1="180" x2="600" y2="180" />
+    <line x1="0" y1="240" x2="600" y2="240" />
+    <line x1="120" y1="0" x2="120" y2="340" />
+    <line x1="240" y1="0" x2="240" y2="340" />
+    <line x1="360" y1="0" x2="360" y2="340" />
+    <line x1="480" y1="0" x2="480" y2="340" />
+  </g>
+
+  <!-- Mockup Window -->
+  <g transform="translate(60, 35)" filter="url(#glowUnscroll)">
+    <rect width="480" height="270" rx="14" fill="#091b13" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1.5" />
+    
+    <!-- Titlebar -->
+    <path d="M 0,14 A 14,14 0 0 1 14,0 L 466,0 A 14,14 0 0 1 480,14 L 480,38 L 0,38 Z" fill="#030c08" />
+    <circle cx="20" cy="19" r="5" fill="#ef4444" />
+    <circle cx="36" cy="19" r="5" fill="#eab308" />
+    <circle cx="52" cy="19" r="5" fill="#10b981" />
+    <text x="240" y="23" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#6ee7b7" text-anchor="middle">unscroll-seven.vercel.app — Digital Well-Being</text>
+
+    <!-- App Header inside Mockup -->
+    <rect x="25" y="55" width="120" height="18" rx="4" fill="#10b981" opacity="0.9" />
+    <text x="35" y="68" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#021a11">UNSCROLL APP</text>
+    
+    <rect x="360" y="55" width="95" height="18" rx="9" fill="#065f46" />
+    <text x="407" y="67" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#a7f3d0" text-anchor="middle">⚡ Strict Mode</text>
+
+    <!-- Dashboard Cards Inside Mockup -->
+    <!-- Card 1: Screen Time -->
+    <rect x="25" y="88" width="135" height="70" rx="8" fill="#042217" stroke="rgba(16, 185, 129, 0.2)" stroke-width="1" />
+    <text x="37" y="106" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#6ee7b7">TODAY'S SCREEN TIME</text>
+    <text x="37" y="132" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" font-weight="800" fill="#ffffff">2h 14m</text>
+    <text x="37" y="148" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#10b981">-35% vs yesterday</text>
+
+    <!-- Card 2: Buzurg Mode -->
+    <rect x="172" y="88" width="135" height="70" rx="8" fill="#042217" stroke="rgba(225, 29, 72, 0.3)" stroke-width="1" />
+    <text x="184" y="106" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#fda4af">BUZURG LOCKOUT</text>
+    <text x="184" y="132" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="800" fill="#ffffff">24-Hour Active</text>
+    <text x="184" y="148" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#f43f5e">Emergency unlock ONLY</text>
+
+    <!-- Card 3: Parental Controls -->
+    <rect x="320" y="88" width="135" height="70" rx="8" fill="#042217" stroke="rgba(59, 130, 246, 0.3)" stroke-width="1" />
+    <text x="332" y="106" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#93c5fd">PARENT SUPERVISION</text>
+    <text x="332" y="132" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="800" fill="#ffffff">Active PIN</text>
+    <text x="332" y="148" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#60a5fa">Protected controls</text>
+
+    <!-- Chart / Visual representation -->
+    <rect x="25" y="172" width="430" height="80" rx="8" fill="#03160f" stroke="rgba(16, 185, 129, 0.15)" stroke-width="1" />
+    <path d="M 45,230 Q 100,210 160,225 T 280,195 T 390,215 T 440,190" fill="none" stroke="#10b981" stroke-width="3" />
+    <circle cx="440" cy="190" r="4" fill="#ffffff" stroke="#10b981" stroke-width="2" />
+    <text x="45" y="192" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="600" fill="#a7f3d0">Weekly Focus Analytics</text>
+  </g>
+
+  <!-- Vercel Live Badge -->
+  <g transform="translate(460, 20)">
+    <rect width="115" height="28" rx="14" fill="#020906" stroke="#10b981" stroke-width="1.5" />
+    <circle cx="16" cy="14" r="4" fill="#10b981" />
+    <text x="62" y="18" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">LIVE ON VERCEL</text>
+  </g>
+</svg>

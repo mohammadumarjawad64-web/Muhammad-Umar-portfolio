@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Controller - Calm & Mindful Screen Time Management</title>
+  <meta name="description" content="Manage screen time, build healthier digital habits, 5-minute awareness alerts, 24-hour strict Buzurg lockouts, and parental remote controls in a calm, comforting environment.">
+  
+  <!-- Calming Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Self-contained Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Optional Chart.js CDN for dynamic rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="antialiased">
+
+  <!-- Toast Notification System -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <!-- Main Container -->
+  <div class="app-container">
+    
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+      <div class="brand-wrapper">
+        <div class="brand-icon">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-2.5">
+            <span class="brand-title">App Controller</span>
+            <span id="active-mode-badge" class="badge badge-normal">Normal Mode</span>
+          </div>
+          <div class="brand-subtitle">Mindful Screen Time & Habit Balance</div>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="nav-tabs" role="tablist">
+        <button class="nav-tab-btn active" data-view="dashboard" onclick="appController.switchView('dashboard')">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+          Dashboard
+        </button>
+        <button class="nav-tab-btn" data-view="wizard" onclick="appController.switchView('wizard')">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
+          Plan Setup
+        </button>
+        <button class="nav-tab-btn" data-view="parental" onclick="appController.switchView('parental')">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+          Parental Hub
+        </button>
+        <button class="nav-tab-btn" data-view="mindfulness" onclick="appController.switchView('mindfulness')">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+          Mindful Pause
+        </button>
+      </nav>
+
+      <!-- Right Controls: Speed Simulation, Theme & Audio -->
+      <div class="nav-controls">
+        <div class="control-pill" title="Simulation Speed multiplier for testing notifications and locks">
+          <span>Speed:</span>
+          <select id="sim-speed-select" class="control-select" onchange="appController.setSimSpeed(this.value)">
+            <option value="1">1x (Real Time)</option>
+            <option value="10">10x (Quick Test)</option>
+            <option value="30" selected>30x (Rapid Demo)</option>
+            <option value="60">60x (1s = 1m)</option>
+          </select>
+        </div>
+
+        <!-- Theme Toggle: Calm Twilight / Serene Day -->
+        <button onclick="appController.toggleTheme()" class="icon-btn" id="theme-toggle-btn" title="Toggle Calm Day / Twilight Theme">
+          <svg id="theme-icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+          <svg id="theme-icon-moon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+        </button>
+
+        <!-- Audio Chimes Toggle -->
+        <button onclick="appController.toggleAudio()" id="btn-audio-toggle" class="icon-btn text-emerald-400" title="Toggle Calming Audio Chimes">
+          <svg id="icon-audio-on" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
+          <svg id="icon-audio-off" class="w-4 h-4 hidden text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15zM17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"></path></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- =========================================================================
+         VIEW 1: MAIN DASHBOARD
+         ========================================================================= -->
+    <main id="view-dashboard" class="app-view active">
+      
+      <!-- Buzurg Lockdown Alert Banner (Appears if any app is strictly locked) -->
+      <div id="buzurg-active-banner" class="buzurg-banner hidden">
+        <div class="flex items-center gap-4">
+          <div class="p-3 bg-orange-500/20 rounded-2xl border border-orange-500/40 text-orange-400">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="text-base font-bold text-orange-200">Strict Mode (Buzurg Mode) 24h Lock In Effect</h3>
+              <span class="badge badge-strict">24h Quarantined</span>
+            </div>
+            <p id="buzurg-banner-text" class="text-xs text-orange-300 mt-0.5">Instagram reached its 30-minute limit. App is locked for 24 hours to enforce healthy discipline.</p>
+          </div>
+        </div>
+        <div class="text-right flex items-center gap-4">
+          <div>
+            <div class="text-[11px] text-orange-300 font-semibold uppercase tracking-wider">Lockdown Remaining</div>
+            <div id="buzurg-lockdown-countdown" class="buzurg-timer">23:59:45</div>
+          </div>
+          <button onclick="appController.emergencyUnlockDemo()" class="btn-secondary text-xs py-1.5 px-3" title="Unlock now for testing">
+            Reset (Demo)
+          </button>
+        </div>
+      </div>
+
+      <!-- Overview Stats Grid -->
+      <div class="stats-grid">
+        <div class="glass-card stat-card border-l-4 border-l-emerald-500">
+          <div class="stat-label">Total Screen Time Today</div>
+          <div id="stat-total-screentime" class="stat-value">1h 45m</div>
+          <div class="stat-meta text-emerald-400">
+            <svg class="w-4 h-4 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            Healthy & Balanced (2h 15m remaining)
+          </div>
+        </div>
+
+        <div class="glass-card stat-card border-l-4 border-l-cyan-500">
+          <div class="stat-label">Social Media Usage</div>
+          <div id="stat-social-screentime" class="stat-value">30m / 45m</div>
+          <div class="stat-meta text-cyan-300">Instagram, TikTok, WhatsApp</div>
+        </div>
+
+        <div class="glass-card stat-card border-l-4 border-l-amber-500">
+          <div class="stat-label">Gaming Usage</div>
+          <div id="stat-gaming-screentime" class="stat-value">40m / 90m</div>
+          <div class="stat-meta text-amber-300">PUBG Mobile, Free Fire</div>
+        </div>
+
+        <div class="glass-card stat-card border-l-4 border-l-teal-500">
+          <div class="stat-label">Mindful Focus Score</div>
+          <div class="stat-value text-teal-400" id="stat-focus-score">92%</div>
+          <div class="stat-meta text-teal-300">Gentle alerts active • Calm rhythm</div>
+        </div>
+      </div>
+
+      <!-- Dashboard Grid: Apps List + Live Simulator & Analytics -->
+      <div class="dashboard-grid">
+        
+        <!-- Left Column: Managed Applications & 5-Min Alert Log -->
+        <div class="space-y-6">
+          <div class="glass-card p-6">
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+              <div>
+                <h2 class="text-xl font-bold flex items-center gap-2 text-main">
+                  <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                  Monitored Applications & Daily Limits
+                </h2>
+                <p class="text-xs text-muted mt-0.5">Alerts every 5 minutes keep you aware. Strict Mode locks for 24h when the limit hits.</p>
+              </div>
+
+              <!-- Quick Mode Switcher -->
+              <div class="flex items-center gap-1.5 p-1 bg-black/20 rounded-xl border border-white/10">
+                <button id="btn-mode-normal" onclick="appController.setActiveMode('normal')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-600 text-white transition shadow">Normal Mode</button>
+                <button id="btn-mode-strict" onclick="appController.setActiveMode('strict')" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-muted hover:text-white transition">Strict (Buzurg)</button>
+              </div>
+            </div>
+
+            <!-- Apps Cards Grid (Pre-rendered for instantaneous display) -->
+            <div id="app-cards-container" class="apps-grid">
+              
+              <!-- 1. Instagram -->
+              <div class="app-item-card is-locked" id="card-app-instagram">
+                <div class="app-item-header">
+                  <div class="app-identity">
+                    <div class="app-avatar">📸</div>
+                    <div>
+                      <div class="app-name">Instagram</div>
+                      <div class="app-category">Social Media</div>
+                    </div>
+                  </div>
+                  <div><span class="badge badge-strict">🔒 Locked (24h)</span></div>
+                </div>
+                <div class="space-y-1.5">
+                  <div class="progress-labels">
+                    <span>Used: <strong class="text-main">30m</strong> / 30m</span>
+                    <span>100%</span>
+                  </div>
+                  <div class="progress-container">
+                    <div class="progress-fill danger" style="width: 100%"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-white/5">
+                  <div class="text-[11px] text-muted">Alerts: <strong>Every 5m</strong></div>
+                  <button onclick="appController.selectAndTestApp('instagram')" class="btn-secondary text-xs py-1.5 px-3">View Lock Screen</button>
+                </div>
+              </div>
+
+              <!-- 2. PUBG Mobile -->
+              <div class="app-item-card" id="card-app-pubg">
+                <div class="app-item-header">
+                  <div class="app-identity">
+                    <div class="app-avatar">🎮</div>
+                    <div>
+                      <div class="app-name">PUBG Mobile</div>
+                      <div class="app-category">Gaming</div>
+                    </div>
+                  </div>
+                  <div><span class="badge badge-normal">Active</span></div>
+                </div>
+                <div class="space-y-1.5">
+                  <div class="progress-labels">
+                    <span>Used: <strong class="text-main">40m</strong> / 90m</span>
+                    <span>44%</span>
+                  </div>
+                  <div class="progress-container">
+                    <div class="progress-fill safe" style="width: 44%"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-white/5">
+                  <div class="text-[11px] text-muted">Alerts: <strong>Every 5m</strong></div>
+                  <button onclick="appController.selectAndTestApp('pubg')" class="btn-secondary text-xs py-1.5 px-3">Test in Simulator &rarr;</button>
+                </div>
+              </div>
+
+              <!-- 3. TikTok -->
+              <div class="app-item-card" id="card-app-tiktok">
+                <div class="app-item-header">
+                  <div class="app-identity">
+                    <div class="app-avatar">🎵</div>
+                    <div>
+                      <div class="app-name">TikTok</div>
+                      <div class="app-category">Social Media</div>
+                    </div>
+                  </div>
+                  <div><span class="badge badge-normal">Active</span></div>
+                </div>
+                <div class="space-y-1.5">
+                  <div class="progress-labels">
+                    <span>Used: <strong class="text-main">15m</strong> / 25m</span>
+                    <span>60%</span>
+                  </div>
+                  <div class="progress-container">
+                    <div class="progress-fill safe" style="width: 60%"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-white/5">
+                  <div class="text-[11px] text-muted">Alerts: <strong>Every 5m</strong></div>
+                  <button onclick="appController.selectAndTestApp('tiktok')" class="btn-secondary text-xs py-1.5 px-3">Test in Simulator &rarr;</button>
+                </div>
+              </div>
+
+              <!-- 4. WhatsApp -->
+              <div class="app-item-card" id="card-app-whatsapp">
+                <div class="app-item-header">
+                  <div class="app-identity">
+                    <div class="app-avatar">💬</div>
+                    <div>
+                      <div class="app-name">WhatsApp</div>
+                      <div class="app-category">Messaging</div>
+                    </div>
+                  </div>
+                  <div><span class="badge badge-normal">Active</span></div>
+                </div>
+                <div class="space-y-1.5">
+                  <div class="progress-labels">
+                    <span>Used: <strong class="text-main">20m</strong> / 45m</span>
+                    <span>44%</span>
+                  </div>
+                  <div class="progress-container">
+                    <div class="progress-fill safe" style="width: 44%"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-white/5">
+                  <div class="text-[11px] text-muted">Alerts: <strong>Every 5m</strong></div>
+                  <button onclick="appController.selectAndTestApp('whatsapp')" class="btn-secondary text-xs py-1.5 px-3">Test in Simulator &rarr;</button>
+                </div>
+              </div>
+
+              <!-- 5. YouTube -->
+              <div class="app-item-card" id="card-app-youtube">
+                <div class="app-item-header">
+                  <div class="app-identity">
+                    <div class="app-avatar">▶️</div>
+                    <div>
+                      <div class="app-name">YouTube</div>
+                      <div class="app-category">Video Streaming</div>
+                    </div>
+                  </div>
+                  <div><span class="badge badge-normal">Active</span></div>
+                </div>
+                <div class="space-y-1.5">
+                  <div class="progress-labels">
+                    <span>Used: <strong class="text-main">30m</strong> / 60m</span>
+                    <span>50%</span>
+                  </div>
+                  <div class="progress-container">
+                    <div class="progress-fill safe" style="width: 50%"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-white/5">
+                  <div class="text-[11px] text-muted">Alerts: <strong>Every 5m</strong></div>
+                  <button onclick="appController.selectAndTestApp('youtube')" class="btn-secondary text-xs py-1.5 px-3">Test in Simulator &rarr;</button>
+                </div>
+              </div>
+
+              <!-- 6. Free Fire -->
+              <div class="app-item-card" id="card-app-freefire">
+                <div class="app-item-header">
+                  <div class="app-identity">
+                    <div class="app-avatar">🔥</div>
+                    <div>
+                      <div class="app-name">Free Fire</div>
+                      <div class="app-category">Gaming</div>
+                    </div>
+                  </div>
+                  <div><span class="badge badge-normal">Active</span></div>
+                </div>
+                <div class="space-y-1.5">
+                  <div class="progress-labels">
+                    <span>Used: <strong class="text-main">10m</strong> / 45m</span>
+                    <span>22%</span>
+                  </div>
+                  <div class="progress-container">
+                    <div class="progress-fill safe" style="width: 22%"></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between pt-2 border-t border-white/5">
+                  <div class="text-[11px] text-muted">Alerts: <strong>Every 5m</strong></div>
+                  <button onclick="appController.selectAndTestApp('freefire')" class="btn-secondary text-xs py-1.5 px-3">Test in Simulator &rarr;</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Notification History Feed (Pre-rendered for instantaneous display) -->
+          <div class="glass-card p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-base font-bold flex items-center gap-2">
+                <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+                5-Minute Milestone Notification History
+              </h3>
+              <button onclick="appController.clearNotificationLog()" class="text-xs text-muted hover:text-main">Clear Feed</button>
+            </div>
+            <div id="notification-log-list" class="space-y-2.5 max-h-56 overflow-y-auto pr-2">
+              <div class="p-3 bg-black/20 rounded-xl border border-white/5 flex items-start gap-3">
+                <div class="mt-0.5 text-base">🔒</div>
+                <div class="flex-1 text-xs">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-main">30-Minute Limit Reached</span>
+                    <span class="text-[10px] text-muted">Just now</span>
+                  </div>
+                  <p class="text-muted mt-0.5 leading-snug">You have reached your 30-minute daily goal on Instagram. Time for a mindful break!</p>
+                </div>
+              </div>
+              <div class="p-3 bg-black/20 rounded-xl border border-white/5 flex items-start gap-3">
+                <div class="mt-0.5 text-base">⏱️</div>
+                <div class="flex-1 text-xs">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-main">25 Minutes Milestone</span>
+                    <span class="text-[10px] text-muted">5m ago</span>
+                  </div>
+                  <p class="text-muted mt-0.5 leading-snug">25 minutes elapsed on Instagram. 5 minutes remaining before your limit.</p>
+                </div>
+              </div>
+              <div class="p-3 bg-black/20 rounded-xl border border-white/5 flex items-start gap-3">
+                <div class="mt-0.5 text-base">⏱️</div>
+                <div class="flex-1 text-xs">
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-main">20 Minutes Milestone</span>
+                    <span class="text-[10px] text-muted">10m ago</span>
+                  </div>
+                  <p class="text-muted mt-0.5 leading-snug">20 minutes elapsed on Instagram. Stay mindful of screen time.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Phone Simulator & Screen Time Chart -->
+        <div class="space-y-6">
+          
+          <!-- Live Interactive App Tester -->
+          <div class="glass-card p-6 border-emerald-500/30">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <h3 class="font-bold text-base text-emerald-300">Live App Usage Simulator</h3>
+                <p class="text-xs text-muted">Test 5-min alerts & 24h lockout interactively</p>
+              </div>
+              <span id="simulator-status-badge" class="badge badge-normal">Idle</span>
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <label class="block text-xs font-semibold text-muted mb-1.5">Select App to Launch:</label>
+                <select id="sim-app-selector" class="w-full bg-slate-900 border border-emerald-500/30 rounded-xl p-2.5 text-xs text-white focus:border-emerald-400 outline-none">
+                  <option value="instagram">Instagram (Social Media - 30m limit)</option>
+                  <option value="pubg">PUBG Mobile (Gaming - 90m limit)</option>
+                  <option value="tiktok">TikTok (Shorts/Reels - 25m limit)</option>
+                  <option value="whatsapp">WhatsApp (Messaging - 45m limit)</option>
+                  <option value="youtube">YouTube (Video - 60m limit)</option>
+                  <option value="freefire">Free Fire (Gaming - 45m limit)</option>
+                </select>
+              </div>
+
+              <!-- Simulator Active Controls -->
+              <div id="sim-active-panel" class="bg-black/25 rounded-2xl p-4 border border-white/10 space-y-3">
+                <div class="flex justify-between items-center">
+                  <span class="text-xs text-muted">Session Time Elapsed:</span>
+                  <span id="sim-session-time" class="font-mono text-lg font-bold text-emerald-400">00:00</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-xs text-muted">Next 5-min reminder in:</span>
+                  <span id="sim-next-alert" class="font-mono text-xs text-amber-400">05:00</span>
+                </div>
+                
+                <div class="progress-container">
+                  <div id="sim-session-bar" class="progress-fill safe" style="width: 0%"></div>
+                </div>
+
+                <div class="flex gap-2 pt-1">
+                  <button id="sim-start-btn" onclick="appController.startSimSession()" class="btn-primary w-full py-2.5 text-xs">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path></svg>
+                    Start Using App
+                  </button>
+                  <button id="sim-stop-btn" onclick="appController.stopSimSession()" class="btn-secondary w-full py-2.5 text-xs hidden">
+                    Stop / Exit App
+                  </button>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between pt-1">
+                <button onclick="appController.openSimModal()" class="text-xs text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1">
+                  <span>📱 Open Interactive Phone Mockup &rarr;</span>
+                </button>
+              </div>
+
+              <div class="p-3 bg-emerald-500/10 rounded-xl border border-emerald-500/20 text-xs text-emerald-300">
+                🌿 <strong>Gentle Demo Tip:</strong> At <strong>30x or 60x speed</strong>, notifications chime every 5–10 seconds and you can witness the 30-minute Strict Lockout in under 30 seconds!
+              </div>
+            </div>
+          </div>
+
+          <!-- Usage Analytics Chart -->
+          <div class="glass-card p-6">
+            <h3 class="font-bold text-base mb-4 flex items-center justify-between">
+              <span>Today's Time Distribution</span>
+              <span class="text-xs font-normal text-muted">Mindful Balance</span>
+            </h3>
+            <div class="h-48 relative flex items-center justify-center">
+              <canvas id="usageDoughnutChart" style="max-height: 190px;"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+    <!-- =========================================================================
+         VIEW 2: INITIAL REGISTRATION & SETUP WIZARD (Personalized Plan)
+         ========================================================================= -->
+    <section id="view-wizard" class="app-view">
+      <div class="max-w-3xl mx-auto glass-card p-8">
+        
+        <div class="section-header text-center">
+          <div class="inline-flex p-3 rounded-2xl bg-emerald-500/20 text-emerald-400 mb-3">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h2 class="section-title justify-center">Create Your Screen Time Plan</h2>
+          <p class="section-subtitle">Answer a few simple questions to create your personalized healthy habits plan.</p>
+        </div>
+
+        <!-- Wizard Stepper Indicators -->
+        <div class="wizard-stepper">
+          <div class="step-node active" id="wizard-step-node-1">1</div>
+          <div class="step-node" id="wizard-step-node-2">2</div>
+          <div class="step-node" id="wizard-step-node-3">3</div>
+          <div class="step-node" id="wizard-step-node-4">4</div>
+          <div class="step-node" id="wizard-step-node-5">5</div>
+        </div>
+
+        <!-- Step 1: Apps Used Regularly -->
+        <div class="wizard-step-content active" id="wizard-step-1">
+          <h3 class="text-lg font-bold mb-1">1. Which applications do you use regularly?</h3>
+          <p class="text-xs text-muted mb-5">Select the apps where you spend the most daily time.</p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6" id="wizard-app-selection-grid">
+            <label class="flex items-center gap-3 p-3.5 rounded-xl bg-black/20 border border-white/10 hover:border-emerald-500/50 cursor-pointer transition">
+              <input type="checkbox" name="wizard-apps" value="instagram" checked class="w-4 h-4 text-emerald-600 rounded">
+              <div>
+                <div class="font-bold text-sm">📸 Instagram</div>
+                <div class="text-[11px] text-muted">Social Media & Reels</div>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-3.5 rounded-xl bg-black/20 border border-white/10 hover:border-emerald-500/50 cursor-pointer transition">
+              <input type="checkbox" name="wizard-apps" value="pubg" checked class="w-4 h-4 text-emerald-600 rounded">
+              <div>
+                <div class="font-bold text-sm">🎮 PUBG Mobile</div>
+                <div class="text-[11px] text-muted">Multiplayer Gaming</div>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-3.5 rounded-xl bg-black/20 border border-white/10 hover:border-emerald-500/50 cursor-pointer transition">
+              <input type="checkbox" name="wizard-apps" value="tiktok" checked class="w-4 h-4 text-emerald-600 rounded">
+              <div>
+                <div class="font-bold text-sm">🎵 TikTok</div>
+                <div class="text-[11px] text-muted">Short Videos</div>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-3.5 rounded-xl bg-black/20 border border-white/10 hover:border-emerald-500/50 cursor-pointer transition">
+              <input type="checkbox" name="wizard-apps" value="whatsapp" checked class="w-4 h-4 text-emerald-600 rounded">
+              <div>
+                <div class="font-bold text-sm">💬 WhatsApp</div>
+                <div class="text-[11px] text-muted">Messaging & Calls</div>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-3.5 rounded-xl bg-black/20 border border-white/10 hover:border-emerald-500/50 cursor-pointer transition">
+              <input type="checkbox" name="wizard-apps" value="youtube" class="w-4 h-4 text-emerald-600 rounded">
+              <div>
+                <div class="font-bold text-sm">▶️ YouTube</div>
+                <div class="text-[11px] text-muted">Video Streaming</div>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 p-3.5 rounded-xl bg-black/20 border border-white/10 hover:border-emerald-500/50 cursor-pointer transition">
+              <input type="checkbox" name="wizard-apps" value="freefire" class="w-4 h-4 text-emerald-600 rounded">
+              <div>
+                <div class="font-bold text-sm">🔥 Free Fire</div>
+                <div class="text-[11px] text-muted">Battle Royale Game</div>
+              </div>
+            </label>
+          </div>
+
+          <div class="flex justify-end">
+            <button onclick="appController.wizardNext(2)" class="btn-primary">Next: Time Limits &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Time Limits Per App -->
+        <div class="wizard-step-content" id="wizard-step-2">
+          <h3 class="text-lg font-bold mb-1">2. How much time do you want to spend on each application daily?</h3>
+          <p class="text-xs text-muted mb-5">Set target daily limits for each app. Every 5 minutes you will receive mindful alerts.</p>
+
+          <div class="space-y-4 mb-8">
+            <div class="p-4 bg-black/20 rounded-xl border border-white/10 space-y-2">
+              <div class="flex justify-between items-center text-sm">
+                <span class="font-bold">📸 Instagram Daily Limit:</span>
+                <span id="limit-val-instagram" class="font-mono text-emerald-400 font-bold">30 Minutes</span>
+              </div>
+              <input type="range" id="input-limit-instagram" min="10" max="180" step="5" value="30" oninput="document.getElementById('limit-val-instagram').innerText = this.value + ' Minutes'">
+              <div class="flex justify-between text-[11px] text-muted">
+                <span>10m (High Focus)</span>
+                <span>30m (Recommended)</span>
+                <span>2h (Relaxed)</span>
+              </div>
+            </div>
+
+            <div class="p-4 bg-black/20 rounded-xl border border-white/10 space-y-2">
+              <div class="flex justify-between items-center text-sm">
+                <span class="font-bold">🎮 PUBG Mobile / Games Limit:</span>
+                <span id="limit-val-pubg" class="font-mono text-amber-400 font-bold">90 Minutes</span>
+              </div>
+              <input type="range" id="input-limit-pubg" min="15" max="240" step="15" value="90" oninput="document.getElementById('limit-val-pubg').innerText = this.value + ' Minutes'">
+              <div class="flex justify-between text-[11px] text-muted">
+                <span>15m (Quick Match)</span>
+                <span>90m (Balanced)</span>
+                <span>4h (Heavy)</span>
+              </div>
+            </div>
+
+            <div class="p-4 bg-black/20 rounded-xl border border-white/10 space-y-2">
+              <div class="flex justify-between items-center text-sm">
+                <span class="font-bold">🎵 TikTok / Shorts Limit:</span>
+                <span id="limit-val-tiktok" class="font-mono text-emerald-400 font-bold">25 Minutes</span>
+              </div>
+              <input type="range" id="input-limit-tiktok" min="5" max="120" step="5" value="25" oninput="document.getElementById('limit-val-tiktok').innerText = this.value + ' Minutes'">
+            </div>
+          </div>
+
+          <div class="flex justify-between">
+            <button onclick="appController.wizardNext(1)" class="btn-secondary">&larr; Back</button>
+            <button onclick="appController.wizardNext(3)" class="btn-primary">Next: Category Budgets &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Overall Category Time Budgets -->
+        <div class="wizard-step-content" id="wizard-step-3">
+          <h3 class="text-lg font-bold mb-1">3. Category Time Budgets</h3>
+          <p class="text-xs text-muted mb-5">How much total time would you like to spend on Social Media and Gaming daily?</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+            <div class="p-5 bg-black/20 rounded-xl border border-white/10 space-y-3">
+              <div class="text-sm font-bold text-cyan-300">📱 Total Daily Social Media Cap</div>
+              <select id="wizard-social-budget" class="w-full bg-slate-900 border border-white/10 rounded-xl p-2.5 text-xs text-white">
+                <option value="30">30 Minutes / day (High Focus)</option>
+                <option value="45" selected>45 Minutes / day (Balanced & Calm)</option>
+                <option value="60">60 Minutes / day (Standard)</option>
+                <option value="120">2 Hours / day (Relaxed)</option>
+              </select>
+              <p class="text-[11px] text-muted">Covers Instagram, TikTok, Facebook, Twitter/X.</p>
+            </div>
+
+            <div class="p-5 bg-black/20 rounded-xl border border-white/10 space-y-3">
+              <div class="text-sm font-bold text-amber-300">🕹️ Total Daily Gaming Cap</div>
+              <select id="wizard-gaming-budget" class="w-full bg-slate-900 border border-white/10 rounded-xl p-2.5 text-xs text-white">
+                <option value="45">45 Minutes / day (1-2 Matches)</option>
+                <option value="90" selected>90 Minutes / day (Recommended)</option>
+                <option value="120">2 Hours / day (Weekend Gamer)</option>
+                <option value="180">3 Hours / day (Extended)</option>
+              </select>
+              <p class="text-[11px] text-muted">Covers PUBG Mobile, Free Fire, Roblox, etc.</p>
+            </div>
+          </div>
+
+          <div class="flex justify-between">
+            <button onclick="appController.wizardNext(2)" class="btn-secondary">&larr; Back</button>
+            <button onclick="appController.wizardNext(4)" class="btn-primary">Next: Choose Mode &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Choose Mode (Normal vs Strict Buzurg Mode) -->
+        <div class="wizard-step-content" id="wizard-step-4">
+          <h3 class="text-lg font-bold mb-1">4. Choose Your Control Mode</h3>
+          <p class="text-xs text-muted mb-5">Both modes alert you every 5 minutes. But what happens when your limit expires?</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+            
+            <!-- Option A: Normal Mode -->
+            <label class="p-5 rounded-2xl border-2 cursor-pointer transition flex flex-col justify-between bg-emerald-950/15 border-emerald-500/40 hover:border-emerald-400">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-extrabold text-base text-emerald-300">Mode A: Normal Mode</span>
+                  <input type="radio" name="wizard-mode-choice" value="normal" checked class="w-5 h-5 text-emerald-600">
+                </div>
+                <p class="text-xs text-muted mb-3">Keeps you aware without automatically locking apps.</p>
+                <ul class="text-xs text-slate-300 space-y-2 list-disc pl-4">
+                  <li>Sends gentle notifications every 5 minutes (5m, 10m, 15m, 20m, 25m).</li>
+                  <li>Informs you at 30 minutes that your limit has been reached.</li>
+                  <li>Leaves final agency with you without forced lockouts.</li>
+                </ul>
+              </div>
+              <div class="mt-4 pt-3 border-t border-white/10 text-xs font-semibold text-emerald-400">
+                🌿 Best for: Mindful awareness & gentle reminders
+              </div>
+            </label>
+
+            <!-- Option B: Strict Mode (Buzurg Mode) -->
+            <label class="p-5 rounded-2xl border-2 cursor-pointer transition flex flex-col justify-between bg-orange-950/15 border-orange-500/40 hover:border-orange-400">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-extrabold text-base text-orange-300">Mode B: Strict (Buzurg) Mode</span>
+                  <input type="radio" name="wizard-mode-choice" value="strict" class="w-5 h-5 text-orange-600">
+                </div>
+                <p class="text-xs text-muted mb-3">Strong discipline to break addictive scrolling and late-night gaming.</p>
+                <ul class="text-xs text-slate-300 space-y-2 list-disc pl-4">
+                  <li>Sends notifications every 5 minutes to keep you on track.</li>
+                  <li><strong>Automatic 24-Hour Lock:</strong> Once limit is reached, app automatically locks for exactly 24 hours!</li>
+                  <li>App cannot be reopened or extended during the 24h lockdown.</li>
+                  <li>Automatically unlocks after 24 hours have passed.</li>
+                </ul>
+              </div>
+              <div class="mt-4 pt-3 border-t border-white/10 text-xs font-semibold text-orange-400">
+                🔒 Best for: Conquering addiction & exam focus
+              </div>
+            </label>
+
+          </div>
+
+          <div class="flex justify-between">
+            <button onclick="appController.wizardNext(3)" class="btn-secondary">&larr; Back</button>
+            <button onclick="appController.wizardNext(5)" class="btn-primary">Next: Parental Settings &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Step 5: Parental Control & Finalization -->
+        <div class="wizard-step-content" id="wizard-step-5">
+          <h3 class="text-lg font-bold mb-1">5. Parental Control & Plan Confirmation</h3>
+          <p class="text-xs text-muted mb-5">Would you like to enable Parental Control to connect parent & child devices?</p>
+
+          <div class="space-y-4 mb-8">
+            <div class="p-4 bg-black/20 rounded-xl border border-white/10 flex items-center justify-between">
+              <div>
+                <div class="font-bold text-sm">Enable Parental Control Feature</div>
+                <div class="text-xs text-muted">Allows linking a parent device to monitor usage, set limits, and remotely lock apps.</div>
+              </div>
+              <input type="checkbox" id="wizard-parental-toggle" class="w-5 h-5 text-emerald-600 rounded">
+            </div>
+
+            <div class="p-5 bg-emerald-500/10 rounded-2xl border border-emerald-500/30 space-y-2">
+              <h4 class="text-sm font-bold text-emerald-300">Your Personalized Management Plan:</h4>
+              <p class="text-xs text-muted leading-relaxed">
+                Based on your selections, App Controller will reserve a balanced daily allocation of <strong>45m Social Media</strong>, <strong>90m Gaming</strong>, with 5-minute periodic awareness alerts and a peaceful wind-down prompt at 10:30 PM.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex justify-between">
+            <button onclick="appController.wizardNext(4)" class="btn-secondary">&larr; Back</button>
+            <button onclick="appController.savePersonalizedPlan()" class="btn-primary">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Save & Activate My Plan
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         VIEW 3: PARENTAL CONTROL CENTER
+         ========================================================================= -->
+    <section id="view-parental" class="app-view">
+      <div class="section-header">
+        <h2 class="section-title">
+          <svg class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+          Parental Remote Control & Device Pairing
+        </h2>
+        <p class="section-subtitle">Connect parent and child devices to monitor usage, set limits, and remotely lock apps or device.</p>
+      </div>
+
+      <div class="dashboard-grid">
+        
+        <!-- Left: Connected Devices & Remote Lock Panel -->
+        <div class="space-y-6">
+          <div class="glass-card p-6">
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+              <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold text-xl">
+                  📱
+                </div>
+                <div>
+                  <h3 class="font-bold text-base">Connected Device: Child's Phone</h3>
+                  <p class="text-xs text-teal-400 flex items-center gap-1.5 mt-0.5">
+                    <span class="w-2 h-2 rounded-full bg-teal-400 animate-ping"></span>
+                    Live Connected • Sync Code: <strong id="parent-sync-code" class="font-mono text-white">APP-8492</strong>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Remote Full Device Lock Button -->
+              <button onclick="appController.toggleRemoteDeviceLock()" id="btn-remote-device-lock" class="btn-outline-danger">
+                🔒 Remotely Lock Device
+              </button>
+            </div>
+
+            <!-- Remote App Restrictions Table -->
+            <div class="space-y-4">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-muted">Remote Application Controls</h4>
+              
+              <div class="space-y-3">
+                
+                <!-- Instagram Remote Control -->
+                <div class="p-4 bg-black/20 rounded-xl border border-white/10 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <span class="text-2xl">📸</span>
+                    <div>
+                      <div class="font-bold text-sm">Instagram</div>
+                      <div class="text-xs text-muted" id="parent-detail-instagram">Child limit: 30m • Current usage: 30m</div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span id="parent-status-instagram" class="badge badge-strict">Locked</span>
+                    <button id="btn-parent-toggle-instagram" onclick="appController.toggleParentAppLock('instagram')" class="btn-secondary text-xs py-1.5 px-3">
+                      Unlock App
+                    </button>
+                  </div>
+                </div>
+
+                <!-- PUBG Remote Control -->
+                <div class="p-4 bg-black/20 rounded-xl border border-white/10 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <span class="text-2xl">🎮</span>
+                    <div>
+                      <div class="font-bold text-sm">PUBG Mobile</div>
+                      <div class="text-xs text-muted" id="parent-detail-pubg">Child limit: 90m • Current usage: 40m</div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span id="parent-status-pubg" class="badge badge-normal">Allowed</span>
+                    <button id="btn-parent-toggle-pubg" onclick="appController.toggleParentAppLock('pubg')" class="btn-danger text-xs py-1.5 px-3">
+                      Lock App Now
+                    </button>
+                  </div>
+                </div>
+
+                <!-- TikTok Remote Control -->
+                <div class="p-4 bg-black/20 rounded-xl border border-white/10 flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <span class="text-2xl">🎵</span>
+                    <div>
+                      <div class="font-bold text-sm">TikTok</div>
+                      <div class="text-xs text-muted" id="parent-detail-tiktok">Child limit: 25m • Current usage: 15m</div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <span id="parent-status-tiktok" class="badge badge-normal">Allowed</span>
+                    <button id="btn-parent-toggle-tiktok" onclick="appController.toggleParentAppLock('tiktok')" class="btn-danger text-xs py-1.5 px-3">
+                      Lock App Now
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Calm Family Values Card -->
+          <div class="glass-card p-5 border-l-4 border-l-teal-500 text-xs text-muted space-y-2">
+            <h4 class="font-bold text-sm text-teal-300">🌱 Respectful & Transparent Boundaries</h4>
+            <p>
+              App Controller encourages healthy conversations between parents and children. No invasive spyware or hidden tracking — clear, shared time limits help children develop self-regulation naturally.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: Real-time Child Activity Telemetry -->
+        <div class="space-y-6">
+          <div class="glass-card p-6">
+            <h3 class="font-bold text-base mb-4">Child Device Live Telemetry</h3>
+            
+            <div class="space-y-3">
+              <div class="flex justify-between items-center text-xs p-3 bg-black/20 rounded-xl">
+                <span class="text-muted">Device Status</span>
+                <span class="text-emerald-400 font-bold">Active / Screen On</span>
+              </div>
+              <div class="flex justify-between items-center text-xs p-3 bg-black/20 rounded-xl">
+                <span class="text-muted">Current Active App</span>
+                <span id="parent-telemetry-current-app" class="font-bold text-white">None (Home Screen)</span>
+              </div>
+              <div class="flex justify-between items-center text-xs p-3 bg-black/20 rounded-xl">
+                <span class="text-muted">Total Usage Today</span>
+                <span class="font-mono font-bold text-amber-400">1 Hour 45 Mins</span>
+              </div>
+              <div class="flex justify-between items-center text-xs p-3 bg-black/20 rounded-xl">
+                <span class="text-muted">Bedtime Wind-down</span>
+                <span class="text-teal-300 font-bold">10:30 PM - 06:30 AM</span>
+              </div>
+            </div>
+
+            <!-- Sync Test Pill -->
+            <div class="mt-6 pt-4 border-t border-white/10">
+              <div class="text-xs text-muted mb-2 font-semibold">🔄 Live Cross-Tab Sync:</div>
+              <p class="text-xs text-muted leading-relaxed">
+                App Controller uses the modern <code>BroadcastChannel</code> API. Open another browser tab: toggling locks here instantly updates on the other tab without refreshing!
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         VIEW 4: MINDFUL PAUSE & DIGITAL WELL-BEING
+         ========================================================================= -->
+    <section id="view-mindfulness" class="app-view">
+      <div class="section-header">
+        <h2 class="section-title">
+          <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
+          Mindful Pause & Healthy Habits
+        </h2>
+        <p class="section-subtitle">Take a calm moment to step back from screens, reset your focus, and nurture real-life balance.</p>
+      </div>
+
+      <div class="dashboard-grid">
+        
+        <!-- Left: Guided Breathing Exercise -->
+        <div class="space-y-6">
+          <div class="glass-card p-6 text-center">
+            <h3 class="font-bold text-lg mb-1">Feeling the Urge to Doomscroll?</h3>
+            <p class="text-xs text-muted mb-6">Take 2 minutes for Box Breathing (4s Inhale, 4s Hold, 4s Exhale, 4s Rest) to regain calm clarity.</p>
+
+            <!-- Interactive Breathing Circle -->
+            <div class="relative w-48 h-48 mx-auto my-6 flex items-center justify-center">
+              <div id="breathing-circle" class="w-36 h-36 rounded-full bg-emerald-600 opacity-90 flex items-center justify-center text-white font-bold transition-all duration-1000 shadow-lg">
+                <span id="breathing-instruction">Inhale (4s)</span>
+              </div>
+            </div>
+
+            <button onclick="appController.toggleBreathingExercise()" id="btn-breathing" class="btn-primary text-xs py-2 px-6">
+              Start 2-Minute Breathing Session
+            </button>
+          </div>
+
+          <!-- Mindful Reflection -->
+          <div class="glass-card p-6 border-l-4 border-l-emerald-500">
+            <h3 class="font-bold text-base mb-2 text-emerald-300">Peaceful Habit Philosophy</h3>
+            <p class="text-xs text-muted mb-4 leading-relaxed">
+              "Technology is a wonderful servant, but a poor master. When you control your screen time, you reclaim hours for family, learning, rest, and real presence."
+            </p>
+            <blockquote class="italic text-xs text-slate-400 border-l-2 border-emerald-500/40 pl-3">
+              Daily screen time under 2 hours is linked to better sleep quality, improved concentration, and higher well-being.
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- Right: 4 Golden Rules for Digital Balance -->
+        <div class="space-y-6">
+          <div class="glass-card p-6">
+            <h3 class="font-bold text-base mb-4 text-emerald-300">4 Mindful Rules for Healthier Habits</h3>
+            
+            <div class="space-y-3.5">
+              <div class="p-3.5 bg-black/20 rounded-xl space-y-1">
+                <div class="font-bold text-xs text-main">1. The 20-20-20 Eye Reset</div>
+                <p class="text-[11px] text-muted">Every 20 minutes, look at an object 20 feet away for 20 seconds to prevent digital eye strain.</p>
+              </div>
+
+              <div class="p-3.5 bg-black/20 rounded-xl space-y-1">
+                <div class="font-bold text-xs text-main">2. The 1-Hour Digital Sunset</div>
+                <p class="text-[11px] text-muted">Put your phone on charge outside the bedroom 1 hour before sleep to enjoy deep restorative rest.</p>
+              </div>
+
+              <div class="p-3.5 bg-black/20 rounded-xl space-y-1">
+                <div class="font-bold text-xs text-main">3. Intentional Opening</div>
+                <p class="text-[11px] text-muted">Before opening Instagram or games, ask yourself: 'What is my exact goal here?' and set a timer.</p>
+              </div>
+
+              <div class="p-3.5 bg-black/20 rounded-xl space-y-1">
+                <div class="font-bold text-xs text-main">4. Strict Buzurg Mode for Deep Study</div>
+                <p class="text-[11px] text-muted">When studying for exams, switch to Strict Mode so reaching your limit locks distractions for 24 hours.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Interactive Simulator Overlay (Phone Mockup Modal for Testing) -->
+  <div id="simulator-modal" class="modal-overlay">
+    <div class="simulator-phone">
+      <div class="phone-notch"></div>
+      
+      <!-- Phone Header -->
+      <div class="p-3 bg-black/40 flex justify-between items-center text-xs text-slate-300 border-b border-white/10">
+        <span id="phone-sim-clock">20:30</span>
+        <div class="flex items-center gap-1.5 font-bold">
+          <span id="phone-app-title">Instagram</span>
+          <span class="text-[10px] text-emerald-400">● LIVE</span>
+        </div>
+        <button onclick="appController.closeSimModal()" class="text-slate-400 hover:text-white font-bold text-sm">✕</button>
+      </div>
+
+      <!-- Phone Content Body -->
+      <div class="phone-screen p-4 flex flex-col justify-between" id="phone-sim-body">
+        
+        <!-- Live Alert Banner in Simulator -->
+        <div id="sim-phone-notification" class="p-3 rounded-xl bg-emerald-600/90 text-white text-xs shadow-xl hidden">
+          <div class="font-bold flex items-center justify-between">
+            <span>⏱️ App Controller Notification</span>
+            <span id="sim-phone-notif-time">5 Mins</span>
+          </div>
+          <div id="sim-phone-notif-msg" class="mt-1">5 minutes have passed on Instagram. Stay mindful of your time!</div>
+        </div>
+
+        <!-- Simulated App UI Content -->
+        <div class="my-auto text-center space-y-4">
+          <div id="sim-app-icon" class="w-20 h-20 mx-auto rounded-3xl bg-pink-600 flex items-center justify-center text-3xl shadow-xl">
+            📸
+          </div>
+          <div>
+            <h4 id="sim-app-heading" class="font-bold text-lg text-white">Instagram Reels</h4>
+            <p class="text-xs text-slate-400">Simulating active screen usage</p>
+          </div>
+
+          <div class="p-3.5 bg-black/40 rounded-xl border border-white/10 text-xs text-left space-y-1.5">
+            <div class="flex justify-between text-slate-400">
+              <span>Time in this session:</span>
+              <strong id="sim-phone-session-counter" class="font-mono text-emerald-400">00:00</strong>
+            </div>
+            <div class="flex justify-between text-slate-400">
+              <span>Current Limit:</span>
+              <strong id="sim-phone-limit-display" class="font-mono text-white">30:00</strong>
+            </div>
+            <div class="flex justify-between text-slate-400">
+              <span>Active Mode:</span>
+              <strong id="sim-phone-mode-display" class="text-emerald-400">Normal Mode</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Simulator Action Footer -->
+        <div class="space-y-2">
+          <button onclick="appController.stopSimSession()" class="btn-secondary w-full py-2.5 text-xs">
+            Close / Exit Application
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Phone Lockdown Fullscreen Screen (When Buzurg Strict Mode locks!) -->
+      <div id="phone-lockdown-screen" class="absolute inset-0 bg-stone-950/95 backdrop-blur-md p-6 flex flex-col justify-between text-center hidden z-50">
+        <div class="my-auto space-y-4">
+          <div class="w-16 h-16 mx-auto rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center text-2xl border border-orange-500/40 animate-pulse">
+            🔒
+          </div>
+          <h3 class="text-xl font-extrabold text-orange-200">Strict Mode (Buzurg) 24h Lock!</h3>
+          <p class="text-xs text-orange-300 leading-relaxed">
+            Your 30-minute time limit for Instagram has expired. This application is locked for the next 24 hours to enforce healthy habits.
+          </p>
+
+          <div class="p-4 bg-black/60 rounded-xl border border-orange-500/30">
+            <div class="text-[10px] text-orange-400 font-bold uppercase tracking-wider">Locked Until</div>
+            <div id="phone-lockdown-timer" class="font-mono text-xl font-bold text-white mt-1">23h 59m 59s</div>
+          </div>
+
+          <div class="p-3 bg-orange-950/30 rounded-lg text-xs italic text-orange-200">
+            "Patience and self-control build lasting freedom."
+          </div>
+        </div>
+
+        <button onclick="appController.closeSimModal()" class="btn-primary text-xs py-2.5">
+          Return to Dashboard
+        </button>
+      </div>
+
+      <!-- Full Device Remote Lockdown Screen (When Parent locks child device!) -->
+      <div id="phone-remote-device-lock-screen" class="absolute inset-0 bg-stone-950/95 backdrop-blur-md p-6 flex flex-col justify-between text-center hidden z-50">
+        <div class="my-auto space-y-4">
+          <div class="w-16 h-16 mx-auto rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center text-3xl border border-teal-500/40">
+            👨‍👩‍👧
+          </div>
+          <h3 class="text-xl font-extrabold text-teal-200">Device Remotely Paused</h3>
+          <p class="text-xs text-teal-300 leading-relaxed">
+            Parent has paused this device for family time, study, or bedtime. Screen access is temporarily locked.
+          </p>
+          <div class="p-3 bg-teal-950/30 rounded-lg text-xs text-teal-200">
+            Enjoy the offline moment with family & friends!
+          </div>
+        </div>
+
+        <button onclick="appController.closeSimModal()" class="btn-secondary text-xs py-2.5">
+          Dismiss Screen
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Main JavaScript Logic (Loads cleanly in all environments) -->
+  <script src="app.js"></script>
+</body>
+</html>

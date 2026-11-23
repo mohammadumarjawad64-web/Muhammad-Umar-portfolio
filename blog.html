@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ideas, notes, and updates from Muhammad Umar.">
+  <meta name="theme-color" content="#101827">
+  <title>Blog — Muhammad Umar</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="blog.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Charter:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="blog-page">
+  <header class="blog-topbar"><a href="index.html" class="blog-brand"><span class="blog-brand-mark">MU</span><span>Muhammad Umar <small>Personal Blog</small></span></a><nav><a href="index.html">Portfolio</a><a href="blog-admin.html" class="admin-entry"><i class="fa-solid fa-lock"></i> Admin</a></nav></header>
+  <main class="blog-shell">
+    <section class="blog-hero"><p class="eyebrow">NOTES, IDEAS &amp; BUILDS</p><h1>Stories from my<br><span>learning journey.</span></h1><p>Thoughts on computer science, projects, and the things I’m learning along the way.</p></section>
+    <section class="blog-controls" aria-label="Blog filters"><label class="blog-search"><i class="fa-solid fa-magnifying-glass"></i><input id="blog-search" type="search" placeholder="Search articles…" aria-label="Search articles"></label><div class="blog-tags" id="blog-tags"><button class="tag-filter active" data-tag="all">All posts</button></div></section>
+    <p id="blog-status" class="blog-status" role="status">Loading articles…</p>
+    <section id="blog-grid" class="blog-grid" aria-live="polite"></section>
+    <article id="blog-article" class="blog-article" hidden></article>
+  </main>
+  <footer class="blog-footer"><a href="index.html">← Back to portfolio</a><span>© <span id="year"></span> Muhammad Umar</span></footer>
+  <script type="module" src="blog.js"></script>
+</body>
+</html>

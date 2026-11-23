@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgBizzone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14112e" />
+      <stop offset="100%" stop-color="#070614" />
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+    <filter id="glowBizzone" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#000000" flood-opacity="0.8" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="340" fill="url(#bgBizzone)" />
+
+  <!-- Grid lines -->
+  <g stroke="rgba(139, 92, 246, 0.08)" stroke-width="1">
+    <line x1="0" y1="60" x2="600" y2="60" />
+    <line x1="0" y1="120" x2="600" y2="120" />
+    <line x1="0" y1="180" x2="600" y2="180" />
+    <line x1="0" y1="240" x2="600" y2="240" />
+    <line x1="120" y1="0" x2="120" y2="340" />
+    <line x1="240" y1="0" x2="240" y2="340" />
+    <line x1="360" y1="0" x2="360" y2="340" />
+    <line x1="480" y1="0" x2="480" y2="340" />
+  </g>
+
+  <!-- Mockup Window -->
+  <g transform="translate(60, 35)" filter="url(#glowBizzone)">
+    <rect width="480" height="270" rx="14" fill="#0d0a21" stroke="rgba(139, 92, 246, 0.3)" stroke-width="1.5" />
+    
+    <!-- Titlebar -->
+    <path d="M 0,14 A 14,14 0 0 1 14,0 L 466,0 A 14,14 0 0 1 480,14 L 480,38 L 0,38 Z" fill="#05030f" />
+    <circle cx="20" cy="19" r="5" fill="#ef4444" />
+    <circle cx="36" cy="19" r="5" fill="#eab308" />
+    <circle cx="52" cy="19" r="5" fill="#22c55e" />
+    <text x="240" y="23" font-family="'Poppins', sans-serif" font-size="11" fill="#c4b5fd" text-anchor="middle">Bizzone — Your Brand, Your Online Store</text>
+
+    <!-- Nav Inside Mockup -->
+    <rect x="25" y="52" width="90" height="16" rx="4" fill="url(#purpleGrad)" />
+    <text x="35" y="64" font-family="'Poppins', sans-serif" font-size="10" font-weight="800" fill="#ffffff">BIZZONE</text>
+    
+    <rect x="130" y="55" width="45" height="10" rx="3" fill="#332c54" />
+    <rect x="185" y="55" width="45" height="10" rx="3" fill="#332c54" />
+    <rect x="240" y="55" width="45" height="10" rx="3" fill="#332c54" />
+
+    <rect x="410" y="52" width="45" height="18" rx="9" fill="#1e183a" stroke="#8b5cf6" stroke-width="1" />
+    <text x="432" y="64" font-family="'Poppins', sans-serif" font-size="9" fill="#e0e7ff" text-anchor="middle">🛒 Cart (3)</text>
+
+    <!-- Hero Banner Inside Store -->
+    <rect x="25" y="80" width="430" height="65" rx="8" fill="linear-gradient(135deg, #1f1647 0%, #0e0924 100%)" stroke="rgba(139, 92, 246, 0.25)" />
+    <text x="45" y="105" font-family="'Poppins', sans-serif" font-size="14" font-weight="800" fill="#ffffff">Your Brand. Your Store.</text>
+    <text x="45" y="123" font-family="'Poppins', sans-serif" font-size="9.5" fill="#c4b5fd">Next-generation modern e-commerce shopping experience</text>
+    <rect x="345" y="98" width="90" height="24" rx="12" fill="url(#purpleGrad)" />
+    <text x="390" y="114" font-family="'Poppins', sans-serif" font-size="9.5" font-weight="700" fill="#ffffff" text-anchor="middle">Shop Now &rarr;</text>
+
+    <!-- Product Cards Grid -->
+    <!-- Product 1 -->
+    <rect x="25" y="156" width="98" height="98" rx="8" fill="#161133" stroke="rgba(139, 92, 246, 0.15)" />
+    <rect x="35" y="166" width="78" height="48" rx="4" fill="#251c4f" />
+    <text x="35" y="228" font-family="'Poppins', sans-serif" font-size="8.5" font-weight="600" fill="#ffffff">Premium Tech</text>
+    <text x="35" y="242" font-family="'Poppins', sans-serif" font-size="8.5" font-weight="700" fill="#38bdf8">$89.00</text>
+
+    <!-- Product 2 -->
+    <rect x="135" y="156" width="98" height="98" rx="8" fill="#161133" stroke="rgba(139, 92, 246, 0.15)" />
+    <rect x="145" y="166" width="78" height="48" rx="4" fill="#251c4f" />
+    <text x="145" y="228" font-family="'Poppins', sans-serif" font-size="8.5" font-weight="600" fill="#ffffff">Brand Apparel</text>
+    <text x="145" y="242" font-family="'Poppins', sans-serif" font-size="8.5" font-weight="700" fill="#38bdf8">$45.00</text>
+
+    <!-- Product 3 -->
+    <rect x="245" y="156" width="98" height="98" rx="8" fill="#161133" stroke="rgba(139, 92, 246, 0.15)" />
+    <rect x="255" y="166" width="78" height="48" rx="4" fill="#251c4f" />
+    <text x="255" y="228" font-family="'Poppins', sans-serif" font-size="8.5" font-weight="600" fill="#ffffff">Minimalist Case</text>
+    <text x="255" y="242" font-family="'Poppins', sans-serif" font-size="8.5" font-weight="700" fill="#38bdf8">$29.00</text>
+
+    <!-- Product 4 -->
+    <rect x="355" y="156" width="100" height="98" rx="8" fill="#161133" stroke="rgba(139, 92, 246, 0.15)" />
+    <rect x="365" y="166" width="80" height="48" rx="4" fill="#251c4f" />
+    <text x="365" y="228" font-family="'Poppins', sans-serif" font-size="8.5" font-weight="600" fill="#ffffff">Audio Gear</text>
+    <text x="365" y="242" font-family="'Poppins', sans-serif" font-size="8.5" font-weight="700" fill="#38bdf8">$120.00</text>
+  </g>
+
+  <!-- Storefront Badge -->
+  <g transform="translate(450, 20)">
+    <rect width="125" height="28" rx="14" fill="#070614" stroke="#8b5cf6" stroke-width="1.5" />
+    <text x="62" y="18" font-family="'Poppins', sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">ONLINE STOREFRONT</text>
+  </g>
+</svg>

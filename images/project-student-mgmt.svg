@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350">
+  <defs>
+    <linearGradient id="smGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2e37"/>
+      <stop offset="100%" stop-color="#181a20"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="350" fill="url(#smGrad)"/>
+  <!-- Data Table UI Mockup -->
+  <rect x="50" y="45" width="500" height="260" rx="8" fill="#1f232b" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+  <rect x="50" y="45" width="500" height="40" rx="8" fill="#2d323d"/>
+  <text x="80" y="70" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#cbd5e1">STUDENT DATABASE RECORD SYSTEM</text>
+  <!-- Table Header -->
+  <rect x="70" y="100" width="460" height="28" fill="#333844"/>
+  <text x="90" y="119" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#94a3b8">ID</text>
+  <text x="170" y="119" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#94a3b8">NAME</text>
+  <text x="320" y="119" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#94a3b8">PROGRAM</text>
+  <text x="460" y="119" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#94a3b8">SEMESTER</text>
+  <!-- Table Rows -->
+  <line x1="70" y1="155" x2="530" y2="155" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="90" y="148" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e1">001</text>
+  <text x="170" y="148" font-family="Arial, sans-serif" font-size="13" fill="#ffffff">Muhammad Umar</text>
+  <text x="320" y="148" font-family="Arial, sans-serif" font-size="13" fill="#60a5fa">BSCS</text>
+  <text x="460" y="148" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e1">1st</text>
+  <line x1="70" y1="190" x2="530" y2="190" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="90" y="183" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e1">002</text>
+  <text x="170" y="183" font-family="Arial, sans-serif" font-size="13" fill="#ffffff">Computer Science</text>
+  <text x="320" y="183" font-family="Arial, sans-serif" font-size="13" fill="#60a5fa">BSCS</text>
+  <text x="460" y="183" font-family="Arial, sans-serif" font-size="13" fill="#cbd5e1">1st</text>
+  <!-- Success Badge -->
+  <rect x="70" y="235" width="130" height="32" rx="16" fill="#10b981" opacity="0.2"/>
+  <text x="135" y="256" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#34d399" text-anchor="middle">OOP CLASSES</text>
+</svg>

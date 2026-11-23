@@ -1,0 +1,118 @@
+{
+  "user": {
+    "name": "Hamza Ahmed",
+    "registered": true,
+    "planCreated": true
+  },
+  "activeMode": "normal",
+  "simSpeed": 30,
+  "parentalEnabled": true,
+  "remoteDeviceLocked": false,
+  "childDeviceName": "Hamza's Phone",
+  "syncCode": "APP-8492",
+  "lastSyncTime": "2026-11-09T15:59:01.027Z",
+  "apps": {
+    "instagram": {
+      "id": "instagram",
+      "name": "Instagram",
+      "icon": "📸",
+      "category": "Social Media",
+      "dailyLimit": 30,
+      "usedMinutes": 30,
+      "lockedUntil": 1794326266052,
+      "isParentLocked": true,
+      "monitored": true
+    },
+    "pubg": {
+      "id": "pubg",
+      "name": "PUBG Mobile",
+      "icon": "🎮",
+      "category": "Gaming",
+      "dailyLimit": 90,
+      "usedMinutes": 40,
+      "lockedUntil": null,
+      "isParentLocked": false,
+      "monitored": true
+    },
+    "tiktok": {
+      "id": "tiktok",
+      "name": "TikTok",
+      "icon": "🎵",
+      "category": "Social Media",
+      "dailyLimit": 25,
+      "usedMinutes": 15,
+      "lockedUntil": null,
+      "isParentLocked": false,
+      "monitored": true
+    },
+    "whatsapp": {
+      "id": "whatsapp",
+      "name": "WhatsApp",
+      "icon": "💬",
+      "category": "Messaging",
+      "dailyLimit": 45,
+      "usedMinutes": 20,
+      "lockedUntil": null,
+      "isParentLocked": false,
+      "monitored": true
+    },
+    "youtube": {
+      "id": "youtube",
+      "name": "YouTube",
+      "icon": "▶️",
+      "category": "Video Streaming",
+      "dailyLimit": 60,
+      "usedMinutes": 30,
+      "lockedUntil": null,
+      "isParentLocked": false,
+      "monitored": false
+    },
+    "freefire": {
+      "id": "freefire",
+      "name": "Free Fire",
+      "icon": "🔥",
+      "category": "Gaming",
+      "dailyLimit": 45,
+      "usedMinutes": 10,
+      "lockedUntil": null,
+      "isParentLocked": false,
+      "monitored": false
+    }
+  },
+  "budgets": {
+    "socialMedia": 45,
+    "gaming": 90
+  },
+  "simSession": {
+    "active": false,
+    "appId": "instagram",
+    "elapsedSeconds": 0,
+    "lastAlertMilestone": 0
+  },
+  "notifications": [
+    {
+      "id": 1,
+      "time": "Just now",
+      "app": "Instagram",
+      "type": "limit",
+      "title": "30-Minute Limit Reached",
+      "msg": "You have reached your 30-minute daily goal on Instagram. Time for a mindful break!"
+    },
+    {
+      "id": 2,
+      "time": "5m ago",
+      "app": "Instagram",
+      "type": "milestone",
+      "title": "25 Minutes Milestone",
+      "msg": "25 minutes elapsed on Instagram. 5 minutes remaining before your limit."
+    },
+    {
+      "id": 3,
+      "time": "10m ago",
+      "app": "Instagram",
+      "type": "milestone",
+      "title": "20 Minutes Milestone",
+      "msg": "20 minutes elapsed on Instagram. Stay mindful of screen time."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350">
+  <defs>
+    <linearGradient id="cppGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#242832"/>
+      <stop offset="100%" stop-color="#14171d"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="350" fill="url(#cppGrad)"/>
+  <!-- Terminal window -->
+  <rect x="50" y="40" width="500" height="270" rx="8" fill="#0f1115" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+  <rect x="50" y="40" width="500" height="32" rx="8" fill="#1e222a"/>
+  <circle cx="70" cy="56" r="4" fill="#ef4444"/>
+  <circle cx="85" cy="56" r="4" fill="#eab308"/>
+  <circle cx="100" cy="56" r="4" fill="#22c55e"/>
+  <text x="300" y="62" font-family="Courier, monospace" font-size="12" fill="#94a3b8" text-anchor="middle">terminal - main.cpp</text>
+  <!-- Code lines -->
+  <text x="80" y="110" font-family="Courier, monospace" font-size="15" fill="#f43f5e">#include &lt;iostream&gt;</text>
+  <text x="80" y="140" font-family="Courier, monospace" font-size="15" fill="#f43f5e">using namespace std;</text>
+  <text x="80" y="180" font-family="Courier, monospace" font-size="15" fill="#38bdf8">int main() {</text>
+  <text x="110" y="215" font-family="Courier, monospace" font-size="15" fill="#cbd5e1">cout &lt;&lt; "Hello, Muhammad Umar!" &lt;&lt; endl;</text>
+  <text x="110" y="245" font-family="Courier, monospace" font-size="15" fill="#38bdf8">return 0;</text>
+  <text x="80" y="275" font-family="Courier, monospace" font-size="15" fill="#38bdf8">}</text>
+  <!-- Large C++ Badge -->
+  <circle cx="480" cy="235" r="35" fill="#2563eb" opacity="0.3"/>
+  <text x="480" y="244" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#60a5fa" text-anchor="middle">C++</text>
+</svg>

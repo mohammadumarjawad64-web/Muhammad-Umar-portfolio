@@ -1,0 +1,19 @@
+{
+  "name": "app-controller",
+  "version": "1.0.0",
+  "description": "App Controller - Digital Well-Being, Screen-Time Management, Strict 24h Buzurg Mode, and Parental Control Platform",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "screen-time",
+    "digital-wellbeing",
+    "app-controller",
+    "parental-control",
+    "buzurg-mode"
+  ],
+  "author": "Muhammad Umar",
+  "license": "ISC"
+}

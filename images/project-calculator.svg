@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350">
+  <defs>
+    <linearGradient id="calcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c303a"/>
+      <stop offset="100%" stop-color="#181a20"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="350" fill="url(#calcGrad)"/>
+  <!-- Calculator Device Mockup -->
+  <rect x="180" y="30" width="240" height="290" rx="16" fill="#1b1e25" stroke="rgba(255,255,255,0.18)" stroke-width="2"/>
+  <!-- Display screen -->
+  <rect x="200" y="50" width="200" height="50" rx="8" fill="#0f1115" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <text x="385" y="86" font-family="Courier, monospace" font-size="26" font-weight="bold" fill="#38bdf8" text-anchor="end">2026.00</text>
+  <!-- Calculator Keypad Grid -->
+  <g fill="#2d323d" font-family="Arial, sans-serif" font-size="14" font-weight="bold">
+    <rect x="200" y="115" width="42" height="36" rx="6"/><text x="221" y="138" fill="#f43f5e" text-anchor="middle">C</text>
+    <rect x="252" y="115" width="42" height="36" rx="6"/><text x="273" y="138" fill="#cbd5e1" text-anchor="middle">±</text>
+    <rect x="305" y="115" width="42" height="36" rx="6"/><text x="326" y="138" fill="#cbd5e1" text-anchor="middle">%</text>
+    <rect x="358" y="115" width="42" height="36" rx="6" fill="#3b82f6"/><text x="379" y="138" fill="#fff" text-anchor="middle">÷</text>
+
+    <rect x="200" y="160" width="42" height="36" rx="6"/><text x="221" y="183" fill="#fff" text-anchor="middle">7</text>
+    <rect x="252" y="160" width="42" height="36" rx="6"/><text x="273" y="183" fill="#fff" text-anchor="middle">8</text>
+    <rect x="305" y="160" width="42" height="36" rx="6"/><text x="326" y="183" fill="#fff" text-anchor="middle">9</text>
+    <rect x="358" y="160" width="42" height="36" rx="6" fill="#3b82f6"/><text x="379" y="183" fill="#fff" text-anchor="middle">×</text>
+
+    <rect x="200" y="205" width="42" height="36" rx="6"/><text x="221" y="228" fill="#fff" text-anchor="middle">4</text>
+    <rect x="252" y="205" width="42" height="36" rx="6"/><text x="273" y="228" fill="#fff" text-anchor="middle">5</text>
+    <rect x="305" y="205" width="42" height="36" rx="6"/><text x="326" y="228" fill="#fff" text-anchor="middle">6</text>
+    <rect x="358" y="205" width="42" height="36" rx="6" fill="#3b82f6"/><text x="379" y="228" fill="#fff" text-anchor="middle">−</text>
+
+    <rect x="200" y="250" width="42" height="36" rx="6"/><text x="221" y="273" fill="#fff" text-anchor="middle">1</text>
+    <rect x="252" y="250" width="42" height="36" rx="6"/><text x="273" y="273" fill="#fff" text-anchor="middle">2</text>
+    <rect x="305" y="250" width="42" height="36" rx="6"/><text x="326" y="273" fill="#fff" text-anchor="middle">3</text>
+    <rect x="358" y="250" width="42" height="36" rx="6" fill="#10b981"/><text x="379" y="273" fill="#fff" text-anchor="middle">=</text>
+  </g>
+</svg>

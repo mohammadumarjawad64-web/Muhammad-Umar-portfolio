@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGutech" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+    <filter id="glowGutech" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#000000" flood-opacity="0.8" />
+    </filter>
+  </defs>
+
+  <rect width="600" height="340" fill="url(#bgGutech)" />
+
+  <!-- Grid lines -->
+  <g stroke="rgba(37, 99, 235, 0.08)" stroke-width="1">
+    <line x1="0" y1="60" x2="600" y2="60" />
+    <line x1="0" y1="120" x2="600" y2="120" />
+    <line x1="0" y1="180" x2="600" y2="180" />
+    <line x1="0" y1="240" x2="600" y2="240" />
+    <line x1="120" y1="0" x2="120" y2="340" />
+    <line x1="240" y1="0" x2="240" y2="340" />
+    <line x1="360" y1="0" x2="360" y2="340" />
+    <line x1="480" y1="0" x2="480" y2="340" />
+  </g>
+
+  <!-- Mockup Window -->
+  <g transform="translate(60, 35)" filter="url(#glowGutech)">
+    <rect width="480" height="270" rx="14" fill="#0d1527" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1.5" />
+    
+    <!-- Titlebar -->
+    <path d="M 0,14 A 14,14 0 0 1 14,0 L 466,0 A 14,14 0 0 1 480,14 L 480,38 L 0,38 Z" fill="#060913" />
+    <circle cx="20" cy="19" r="5" fill="#ef4444" />
+    <circle cx="36" cy="19" r="5" fill="#eab308" />
+    <circle cx="52" cy="19" r="5" fill="#22c55e" />
+    <text x="240" y="23" font-family="'Poppins', sans-serif" font-size="11" fill="#93c5fd" text-anchor="middle">GUTECH Academic Student Portal — Vite / React</text>
+
+    <!-- Sidebar & Dashboard Header -->
+    <rect x="0" y="38" width="105" height="232" fill="#070c17" />
+    <rect x="12" y="55" width="80" height="14" rx="4" fill="url(#blueGrad)" />
+    <text x="52" y="66" font-family="'Poppins', sans-serif" font-size="9" font-weight="700" fill="#ffffff" text-anchor="middle">GUTECH</text>
+
+    <rect x="12" y="80" width="70" height="8" rx="2" fill="#334155" />
+    <rect x="12" y="100" width="75" height="8" rx="2" fill="#334155" />
+    <rect x="12" y="120" width="65" height="8" rx="2" fill="#334155" />
+    <rect x="12" y="140" width="72" height="8" rx="2" fill="#334155" />
+
+    <!-- Main Content Header -->
+    <text x="125" y="65" font-family="'Poppins', sans-serif" font-size="13" font-weight="700" fill="#ffffff">Welcome, Muhammad Umar</text>
+    <text x="125" y="80" font-family="'Poppins', sans-serif" font-size="9" fill="#94a3b8">BSCS 1st Semester • Enrollment ID: GUTECH-2026-CS</text>
+
+    <!-- Metrics Cards -->
+    <rect x="125" y="96" width="100" height="48" rx="8" fill="#111c33" stroke="rgba(56, 189, 248, 0.2)" />
+    <text x="135" y="114" font-family="'Poppins', sans-serif" font-size="9" fill="#94a3b8">CURRENT GPA</text>
+    <text x="135" y="134" font-family="'Poppins', sans-serif" font-size="16" font-weight="800" fill="#38bdf8">3.85 / 4.0</text>
+
+    <rect x="235" y="96" width="100" height="48" rx="8" fill="#111c33" stroke="rgba(34, 197, 94, 0.2)" />
+    <text x="245" y="114" font-family="'Poppins', sans-serif" font-size="9" fill="#94a3b8">ATTENDANCE</text>
+    <text x="245" y="134" font-family="'Poppins', sans-serif" font-size="16" font-weight="800" fill="#22c55e">96.4%</text>
+
+    <rect x="345" y="96" width="105" height="48" rx="8" fill="#111c33" stroke="rgba(168, 85, 247, 0.2)" />
+    <text x="355" y="114" font-family="'Poppins', sans-serif" font-size="9" fill="#94a3b8">REGISTERED COURSES</text>
+    <text x="355" y="134" font-family="'Poppins', sans-serif" font-size="16" font-weight="800" fill="#c084fc">5 Active</text>
+
+    <!-- Course List / Schedule -->
+    <rect x="125" y="156" width="325" height="95" rx="8" fill="#070c17" stroke="rgba(255, 255, 255, 0.08)" />
+    <text x="140" y="175" font-family="'Poppins', sans-serif" font-size="10" font-weight="700" fill="#ffffff">Course Schedule &amp; Department Announcments</text>
+
+    <rect x="140" y="186" width="295" height="26" rx="4" fill="#111c33" />
+    <text x="150" y="202" font-family="'Poppins', sans-serif" font-size="9" fill="#38bdf8">CS-101 Programming Fundamentals (C++)</text>
+    <text x="390" y="202" font-family="'Poppins', sans-serif" font-size="8.5" fill="#22c55e">Mon/Wed 10:00</text>
+
+    <rect x="140" y="218" width="295" height="26" rx="4" fill="#111c33" />
+    <text x="150" y="234" font-family="'Poppins', sans-serif" font-size="9" fill="#38bdf8">CS-102 Discrete Mathematics &amp; Logic</text>
+    <text x="390" y="234" font-family="'Poppins', sans-serif" font-size="8.5" fill="#22c55e">Tue/Thu 11:30</text>
+  </g>
+
+  <!-- Vite / Portal Badge -->
+  <g transform="translate(470, 20)">
+    <rect width="105" height="28" rx="14" fill="#030712" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="52" y="18" font-family="'Poppins', sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">STUDENT PORTAL</text>
+  </g>
+</svg>
