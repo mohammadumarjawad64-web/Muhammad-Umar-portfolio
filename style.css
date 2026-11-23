@@ -221,47 +221,6 @@ nav {
     z-index: 2;
 }
 
-.hero-avatar-container {
-    flex-shrink: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-}
-
-.hero-avatar-wrapper {
-    width: 270px;
-    height: 270px;
-    position: relative;
-    border-radius: 50%;
-    padding: 5px;
-    background: linear-gradient(135deg, #3b82f6 0%, #0d1527 50%, #ffffff 100%);
-    box-shadow: 0 0 45px rgba(59, 130, 246, 0.3), 0 15px 35px rgba(0, 0, 0, 0.6);
-    animation: avatarFloat 6s ease-in-out infinite;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.hero-avatar-img,
-.hero-avatar-svg {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-}
-
-@keyframes avatarFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-12px);
-    }
-}
-
 .hero-section h1 {
     font-size: clamp(3rem, 4.5vw, 4.6rem);
     font-weight: 700;
@@ -1151,10 +1110,6 @@ footer p {
     .social-links {
         justify-content: center;
     }
-    .hero-avatar-wrapper {
-        width: 230px;
-        height: 230px;
-    }
     .hero-section h1 {
         font-size: 3rem;
     }
@@ -1189,10 +1144,6 @@ footer p {
     }
     .headline {
         font-size: 1.05rem;
-    }
-    .hero-avatar-wrapper {
-        width: 190px;
-        height: 190px;
     }
     .projects-grid {
         grid-template-columns: 1fr;
@@ -1523,11 +1474,6 @@ header {
     background-clip: text;
 }
 
-.hero-avatar-wrapper {
-    background: var(--avatar-gradient);
-    box-shadow: 0 14px 36px rgba(56, 91, 72, 0.17);
-}
-
 .btn-primary {
     color: var(--button-text);
     background: var(--gradient-navy);
@@ -1769,4 +1715,41 @@ button:focus-visible,
 a:focus-visible {
     outline: 3px solid var(--border-focus);
     outline-offset: 3px;
+}
+
+.hero-layout {
+    justify-content: flex-start;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 960px;
+}
+
+.hero-section h1 {
+    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: 0.035em;
+    animation: nameGlow 4.2s ease-in-out infinite;
+    will-change: filter, text-shadow;
+}
+
+@keyframes nameGlow {
+    0%, 100% {
+        filter: brightness(0.88);
+        text-shadow: 0 0 0 rgba(88, 122, 107, 0);
+    }
+    50% {
+        filter: brightness(1.08);
+        text-shadow: 0 0 20px rgba(88, 122, 107, 0.26);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-section h1 {
+        animation: none;
+        filter: none;
+        text-shadow: 0 0 10px rgba(88, 122, 107, 0.12);
+        will-change: auto;
+    }
 }
