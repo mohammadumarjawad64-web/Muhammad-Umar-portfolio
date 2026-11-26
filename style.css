@@ -59,6 +59,8 @@ html {
     scroll-behavior: smooth;
     background-color: var(--obsidian);
     color: var(--moorland-mist);
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -68,6 +70,7 @@ body {
     background-color: var(--obsidian);
     color: var(--moorland-mist);
     overflow-x: hidden;
+    width: 100%;
     position: relative;
     cursor: default;
 }
@@ -97,9 +100,9 @@ img {
 
 .container {
     width: 100%;
-    max-width: 1360px;
+    max-width: min(1440px, 94vw);
     margin: 0 auto;
-    padding: 0 clamp(1.5rem, 5vw, 4.5rem);
+    padding: 0 clamp(1rem, 4vw, 3.5rem);
 }
 
 /* --------------------------------------------------------------------------
@@ -194,20 +197,19 @@ body.cursor-hover .cursor-ring {
     justify-content: center;
     width: 38px;
     height: 38px;
-    border: 1px solid var(--hairline-light);
+    border: 1px solid var(--apple-white);
     font-family: var(--font-heading);
     font-weight: 600;
     font-size: 1.05rem;
-    color: var(--apple-white);
+    color: var(--obsidian);
     letter-spacing: 0.05em;
     transition: all 0.4s ease;
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--liquid-metal);
 }
 
 .nav-brand .brand-link:hover .brand-monogram {
-    border-color: var(--apple-white);
-    background: var(--liquid-metal);
-    color: var(--obsidian);
+    filter: brightness(1.08);
+    box-shadow: 0 0 14px rgba(247, 248, 226, 0.25);
 }
 
 .brand-meta {
@@ -384,8 +386,9 @@ body.cursor-hover .cursor-ring {
    -------------------------------------------------------------------------- */
 .hero-section {
     min-height: 100vh;
-    padding-top: 140px;
-    padding-bottom: 80px;
+    min-height: 100dvh;
+    padding-top: clamp(96px, 12vh, 140px);
+    padding-bottom: clamp(48px, 8vh, 80px);
     display: flex;
     align-items: center;
     position: relative;
@@ -1753,9 +1756,11 @@ body.cursor-hover .cursor-ring {
     justify-content: center;
     width: 32px;
     height: 32px;
-    border: 1px solid var(--hairline);
+    border: 1px solid var(--apple-white);
     font-family: var(--font-heading);
-    color: var(--apple-white);
+    font-weight: 600;
+    background: var(--liquid-metal);
+    color: var(--obsidian);
     font-size: 0.9rem;
 }
 
@@ -1870,19 +1875,66 @@ body.lang-ur .lc-left-col {
 }
 
 /* --------------------------------------------------------------------------
-   Responsive Layout & Mobile Drawers
+   Responsive Layout & Cross-Device Auto-Fit (Desktop, Laptop, Tablet, Mobile)
    -------------------------------------------------------------------------- */
-@media (max-width: 1024px) {
+@media (min-width: 1600px) {
+    html {
+        font-size: 17px;
+    }
+    .container {
+        max-width: min(1560px, 90vw);
+    }
+}
+
+@media (max-width: 1280px) {
     .nav-coordinates {
         display: none;
     }
+    .nav-links {
+        gap: clamp(0.75rem, 1.4vw, 1.35rem);
+    }
+}
+
+@media (max-width: 1024px) {
+    .menu-btn {
+        display: flex;
+    }
+    .nav-links {
+        position: fixed;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 76px);
+        height: calc(100dvh - 76px);
+        background: rgba(23, 23, 21, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.75rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.4s var(--ease-out-expo);
+        border-bottom: 1px solid var(--hairline);
+        z-index: 999;
+    }
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .nav-links a {
+        font-size: 1.1rem;
+    }
     .hero-manifesto-grid {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 2.5rem;
     }
     .about-editorial-grid {
         grid-template-columns: 1fr;
-        gap: 3.5rem;
+        gap: 3rem;
     }
     .project-card {
         grid-template-columns: 1fr;
@@ -1920,39 +1972,51 @@ body.lang-ur .lc-left-col {
 }
 
 @media (max-width: 768px) {
-    .menu-btn {
-        display: flex;
+    .container {
+        max-width: 100%;
+        padding-left: max(1.1rem, env(safe-area-inset-left));
+        padding-right: max(1.1rem, env(safe-area-inset-right));
+    }
+    .nav-container {
+        height: 68px;
     }
     .nav-links {
-        position: fixed;
-        top: 76px;
-        left: 0;
-        width: 100%;
-        height: calc(100vh - 76px);
-        background: rgba(23, 23, 21, 0.98);
-        backdrop-filter: blur(20px);
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2rem;
-        transform: translateY(-100%);
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.4s var(--ease-out-expo);
-        border-bottom: 1px solid var(--hairline);
+        top: 68px;
+        height: calc(100vh - 68px);
+        height: calc(100dvh - 68px);
     }
-    .nav-links.active {
-        transform: translateY(0);
-        opacity: 1;
-        pointer-events: auto;
+    .hero-title {
+        font-size: clamp(2.15rem, 9vw, 3.25rem);
     }
-    .nav-links a {
-        font-size: 1.1rem;
+    .italic-line {
+        padding-left: 0.25rem;
     }
     .about-archival-ledger {
         grid-template-columns: 1fr;
     }
     .composer-actions {
         flex-direction: column;
+    }
+    .hero-actions-editorial {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .hero-actions-editorial .editorial-btn {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-edition {
+        display: none;
+    }
+    .hero-editorial-kicker {
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-bottom: 1.5rem;
+    }
+    .hero-headline-wrap {
+        margin-bottom: 2rem;
     }
 }
