@@ -326,7 +326,7 @@ window.PORTFOLIO_DATA = {
         "E-Commerce"
       ],
       "outcome": "Architected responsive online storefront layouts and modular product discovery components.",
-      "liveUrl": "http://localhost:3000/",
+      "liveUrl": "https://web-app-amber-delta.vercel.app",
       "codeUrl": "https://github.com/mohammadumarjawad64-web"
     },
     {
@@ -340,7 +340,7 @@ window.PORTFOLIO_DATA = {
         "Component UI"
       ],
       "outcome": "Centralized university student workflows and timetable tracking into a high-performance portal.",
-      "liveUrl": "http://localhost:5173/",
+      "liveUrl": "https://client-three-rho-13.vercel.app",
       "codeUrl": "https://github.com/mohammadumarjawad64-web"
     },
     {
@@ -922,7 +922,7 @@ window.PORTFOLIO_DATA_UR = {
         "E-Commerce"
       ],
       "outcome": "Architected responsive online storefront layouts and modular product discovery components.",
-      "liveUrl": "http://localhost:3000/",
+      "liveUrl": "https://web-app-amber-delta.vercel.app",
       "codeUrl": "https://github.com/mohammadumarjawad64-web"
     },
     {
@@ -936,7 +936,7 @@ window.PORTFOLIO_DATA_UR = {
         "Component UI"
       ],
       "outcome": "Centralized university student workflows and timetable tracking into a high-performance portal.",
-      "liveUrl": "http://localhost:5173/",
+      "liveUrl": "https://client-three-rho-13.vercel.app",
       "codeUrl": "https://github.com/mohammadumarjawad64-web"
     },
     {

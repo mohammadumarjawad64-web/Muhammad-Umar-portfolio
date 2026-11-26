@@ -3,160 +3,460 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muhammad Umar | Computer Science Student</title>
+    <title>Muhammad Umar — Editorial Dark Minimalism Portfolio</title>
+    <meta name="description" content="Portfolio of Muhammad Umar — First-semester Computer Science student at GUTECH, Karongi. Focused on C++, software engineering, algorithms, and intellectual rigor.">
+    <meta name="theme-color" content="#171715">
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Charter:ital,wght@0,400;0,700;1,400&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Fonts: Cormorant Garamond, Playfair Display, Inter, Manrope, Noto Nastaliq Urdu -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600&family=Noto+Nastaliq+Urdu:wght@400;600;700&display=swap" rel="stylesheet">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Primary Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <!-- Top Banner for App Controller -->
-    <header>
-        <nav class="container">
-            <div class="logo" id="logo">MU</div>
-            <ul class="nav-links">
-                <li><a href="#about" id="nav-about">About</a></li>
-                <li><a href="#skills" id="nav-skills">Skills</a></li>
-                <li><a href="#experience" id="nav-experience">Experience</a></li>
-                <li><a href="#projects" id="nav-projects">Projects</a></li>
-                <li><a href="blog.html" id="nav-blog">Blog</a></li>
-                <li><a href="#leetcode" id="nav-leetcode"><i class="fas fa-code"></i> LeetCode</a></li>
-                <li><a href="#resume" id="nav-resume"><i class="fas fa-file-alt"></i> Resume</a></li>
-                <li><a href="#education" id="nav-education">Education</a></li>
-            </ul>
-            <div class="nav-controls">
-                <button id="theme-lang-toggle" class="theme-switch-btn" type="button" aria-label="Switch to Urdu" title="Switch to Urdu">
-                    <span class="switch-track">
-                        <span class="switch-thumb">
-                            <i class="fas fa-palette"></i>
-                        </span>
+<body class="editorial-theme">
+    <!-- Tactile Film Grain Texture Overlay -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- Subtle Luxury Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+    <!-- Archival Top Header / Masthead -->
+    <header id="site-header">
+        <nav class="container nav-container">
+            <div class="nav-brand">
+                <a href="#hero" class="brand-link">
+                    <span class="brand-monogram" id="logo">MU</span>
+                    <span class="brand-meta">
+                        <span class="brand-name" id="nav-brand-name">Muhammad Umar</span>
+                        <span class="brand-edition">ARCHIVE // 2026</span>
                     </span>
-                    <span class="switch-text" id="switch-text">Urdu</span>
+                </a>
+            </div>
+
+            <div class="nav-coordinates" aria-hidden="true">
+                <span>24°51' N, 67°00' E</span>
+                <span class="coordinate-divider">/</span>
+                <span id="header-status-pill"><i class="status-indicator"></i> BSCS • GUTECH</span>
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about" id="nav-about"><span class="nav-idx">01</span> About</a></li>
+                <li><a href="#projects" id="nav-projects"><span class="nav-idx">02</span> Repertoire</a></li>
+                <li><a href="#skills" id="nav-skills"><span class="nav-idx">03</span> Taxonomy</a></li>
+                <li><a href="#experience" id="nav-experience"><span class="nav-idx">04</span> Chronology</a></li>
+                <li><a href="#leetcode" id="nav-leetcode"><span class="nav-idx">05</span> LeetCode</a></li>
+                <li><a href="#resume" id="nav-resume"><span class="nav-idx">06</span> CV</a></li>
+                <li><a href="#contact" id="nav-contact"><span class="nav-idx">07</span> Dispatch</a></li>
+                <li><a href="blog.html" id="nav-blog" class="nav-pill-link">Journal</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button id="theme-lang-toggle" class="lang-switch-btn" type="button" aria-label="Switch to Urdu" title="Switch to Urdu">
+                    <span class="lang-code-en active">EN</span>
+                    <span class="lang-divider">/</span>
+                    <span class="lang-code-ur">اردو</span>
                 </button>
-                <div class="menu-btn"><i class="fas fa-bars"></i></div>
+                <button class="menu-btn" aria-label="Toggle navigation menu">
+                    <span class="menu-line"></span>
+                    <span class="menu-line"></span>
+                </button>
             </div>
         </nav>
     </header>
 
-    <main>
-        <!-- Hero Section -->
+    <main id="main-content">
+        <!-- Hero Section: Oversized Editorial Headline & Visual Authority -->
         <section id="hero" class="hero-section">
-            <div class="container hero-layout">
-                <div class="hero-content">
-                    <h1 id="hero-name">Loading...</h1>
-                    <h2 id="hero-label">...</h2>
-                    <p id="hero-headline" class="headline"></p>
-                    <div class="hero-cta">
-                        <a href="#projects" class="btn btn-primary" id="hero-btn-projects">See Projects</a>
-                        <a href="#leetcode" class="btn btn-secondary" id="hero-btn-leetcode"><i class="fas fa-code"></i> LeetCode</a>
-                        <a href="resume.html" target="_blank" class="btn btn-outline" id="hero-btn-resume"><i class="fas fa-file-alt"></i> View Resume</a>
+            <div class="container hero-container">
+                <div class="hero-editorial-kicker">
+                    <span class="kicker-tag">[ VOL. 01 / FOLIO 2026 ]</span>
+                    <span class="kicker-rule"></span>
+                    <span class="kicker-location">KARACHI • SINDH, PAKISTAN</span>
+                </div>
+
+                <div class="hero-headline-wrap">
+                    <h1 class="hero-title" id="hero-title">
+                        <span class="hero-title-line">Architecting software</span>
+                        <span class="hero-title-line italic-line">with intellectual rigor</span>
+                        <span class="hero-title-line">&amp; quiet elegance.</span>
+                    </h1>
+                </div>
+
+                <div class="hero-manifesto-grid">
+                    <div class="manifesto-left">
+                        <div class="author-badge">
+                            <span class="author-label" id="hero-name">Muhammad Umar</span>
+                            <span class="author-role" id="hero-label">Computer Science Student &amp; Aspiring Scientist</span>
+                        </div>
+                        <p class="manifesto-lead" id="hero-headline">
+                            Exploring programming fundamentals, rigorous C++ system concepts, algorithmic thinking, and modern web architectures.
+                        </p>
                     </div>
-                    <div class="social-links" id="social-links">
-                        <!-- Dynamic -->
+
+                    <div class="manifesto-right">
+                        <div class="hero-meta-item">
+                            <span class="meta-label">ACADEMIC FOUNDATION</span>
+                            <span class="meta-val">Bachelor of Science in Computer Science (BSCS)</span>
+                            <span class="meta-sub">GUTECH • First Semester</span>
+                        </div>
+                        <div class="hero-meta-item">
+                            <span class="meta-label">CURRENT INQUIRY</span>
+                            <span class="meta-val">C++ OOP &bull; Memory Models &bull; Problem Solving</span>
+                            <span class="meta-sub">LeetCode Top 25% Practice</span>
+                        </div>
+                        <div class="hero-actions-editorial">
+                            <a href="#projects" class="editorial-btn primary" id="hero-btn-projects">
+                                <span>Inspect Selected Works</span>
+                                <span class="btn-arrow">&rarr;</span>
+                            </a>
+                            <a href="#contact" class="editorial-btn secondary" id="hero-btn-inquire">
+                                <span>Initiate Dispatch</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-social-ticker">
+                    <div class="ticker-label">CURATED DIRECTORY</div>
+                    <div class="ticker-links" id="social-links">
+                        <!-- Dynamic Profiles -->
                     </div>
                 </div>
             </div>
-            <div class="hero-bg-blobs">
-                <div class="blob blob-1"></div>
-                <div class="blob blob-2"></div>
-            </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="section">
+        <!-- About Section: Minimal Personal Introduction & Quiet Minimalism -->
+        <section id="about" class="editorial-section">
             <div class="container">
-                <h2 class="section-title" id="title-about">About Me</h2>
-                <div class="about-grid">
-                    <div class="about-text" id="about-intro">
-                        <!-- Dynamic -->
+                <div class="section-kicker">
+                    <span class="kicker-num">01</span>
+                    <span class="kicker-title" id="title-about">About &amp; Intellectual Stance</span>
+                    <span class="kicker-archive-id">[ DOC_REF: MU-BIO ]</span>
+                </div>
+
+                <div class="about-editorial-grid">
+                    <div class="about-statement-col">
+                        <h2 class="editorial-pull-quote">
+                            “True craft begins not with superficial tooling, but with an uncompromising grasp of first principles.”
+                        </h2>
+                        
+                        <div class="about-archival-ledger" id="about-metrics">
+                            <!-- Dynamic stats/metrics rendered cleanly -->
+                        </div>
                     </div>
-                    <div class="about-stats" id="about-metrics">
-                        <!-- Dynamic -->
+
+                    <div class="about-narrative-col">
+                        <div class="narrative-body" id="about-intro">
+                            <!-- Dynamic intro paragraphs from data.js -->
+                        </div>
+
+                        <div class="craft-pillars-wrap">
+                            <div class="pillars-title">Guiding Tenets of Practice</div>
+                            <div class="pillars-grid" id="leadership-pillars">
+                                <!-- Dynamic pillars -->
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="pillars-grid" id="leadership-pillars">
-                    <!-- Dynamic -->
-                </div>
             </div>
         </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="section bg-light">
+        <!-- Projects Section: Large Visual Showcases & Conversational Filtering -->
+        <section id="projects" class="editorial-section section-border-top">
             <div class="container">
-                <h2 class="section-title" id="title-skills">Technical Expertise</h2>
-                <div class="skills-container" id="skills-grid">
-                    <!-- Dynamic -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="section">
-            <div class="container">
-                <h2 class="section-title" id="title-experience">Work Experience</h2>
-                <div class="timeline" id="work-experience">
-                    <!-- Dynamic -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="section bg-light">
-            <div class="container">
-                <h2 class="section-title" id="title-projects">Featured Projects</h2>
-                <div class="projects-grid" id="projects-grid">
-                    <!-- Dynamic -->
-                </div>
-            </div>
-        </section>
-
-        <!-- LeetCode Section -->
-        <section id="leetcode" class="section">
-            <div class="container leetcode-container">
-                <h2 class="section-title" id="title-leetcode">LeetCode Problem Solving</h2>
-                <div class="leetcode-card" id="leetcode-card">
-                    <!-- Dynamic LeetCode Content -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Resume Section -->
-        <section id="resume" class="section bg-light">
-            <div class="container resume-container">
-                <h2 class="section-title" id="title-resume">Curriculum Vitae</h2>
-                <div class="resume-card" id="resume-card">
-                    <!-- Dynamic Resume Content -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="section">
-            <div class="container">
-                <h2 class="section-title" id="title-education">Education &amp; Certifications</h2>
-                <div class="edu-cert-grid">
-                    <div class="education-list" id="education-list">
-                        <!-- Dynamic -->
+                <div class="section-header-row">
+                    <div class="section-kicker">
+                        <span class="kicker-num">02</span>
+                        <span class="kicker-title" id="title-projects">Selected Repertoire</span>
+                        <span class="kicker-archive-id">[ CATALOGUE // 04 ENTRIES ]</span>
                     </div>
-                    <div class="cert-list" id="cert-list">
-                        <!-- Dynamic -->
+                    <p class="section-editorial-desc">
+                        A curation of deployed software systems, algorithmic programs, and interactive platforms.
+                    </p>
+                </div>
+
+                <!-- Conversational Project Filter / Intent Prompt Bar -->
+                <div class="conversational-filter-box">
+                    <div class="filter-prompt-header">
+                        <span class="prompt-icon"><i class="fas fa-terminal"></i></span>
+                        <span class="prompt-text">INTERACTIVE INTENT PROMPT // ASK OR FILTER BY CRAFT</span>
+                    </div>
+                    <div class="filter-input-wrapper">
+                        <input 
+                            type="text" 
+                            id="conversational-filter-input" 
+                            class="filter-input" 
+                            placeholder="Type intent: e.g., 'Show C++ systems', 'Fintech & commerce', 'Digital well-being'..."
+                            aria-label="Filter projects by conversational intent"
+                        >
+                        <button id="filter-reset-btn" class="filter-reset-btn" type="button" title="Clear filter">Reset</button>
+                    </div>
+                    <div class="quick-intent-chips" id="intent-chips">
+                        <button class="intent-chip active" data-filter="all">All Entries [04]</button>
+                        <button class="intent-chip" data-filter="systems">C++ &amp; Systems</button>
+                        <button class="intent-chip" data-filter="wellbeing">Digital Well-Being</button>
+                        <button class="intent-chip" data-filter="commerce">Commerce Platform</button>
+                        <button class="intent-chip" data-filter="academic">Academic Portal</button>
+                    </div>
+                </div>
+
+                <!-- Large Visual Project Showcases -->
+                <div class="projects-archival-grid" id="projects-grid">
+                    <!-- Dynamic Large Project Cards rendered via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise Section: Clean Typography, Zero Clutter -->
+        <section id="skills" class="editorial-section section-border-top">
+            <div class="container">
+                <div class="section-header-row">
+                    <div class="section-kicker">
+                        <span class="kicker-num">03</span>
+                        <span class="kicker-title" id="title-skills">Taxonomy &amp; Technical Disciplines</span>
+                        <span class="kicker-archive-id">[ SPEC_INDEX: TECH ]</span>
+                    </div>
+                    <p class="section-editorial-desc">
+                        Restrained mastery over foundation tools, avoiding ephemeral buzzwords in favor of structural knowledge.
+                    </p>
+                </div>
+
+                <div class="skills-editorial-taxonomy" id="skills-grid">
+                    <!-- Dynamic clean taxonomy list -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section: Archival Timeline -->
+        <section id="experience" class="editorial-section section-border-top">
+            <div class="container">
+                <div class="section-header-row">
+                    <div class="section-kicker">
+                        <span class="kicker-num">04</span>
+                        <span class="kicker-title" id="title-experience">Chronology &amp; Commercial Practice</span>
+                        <span class="kicker-archive-id">[ ARCHIVE_INDEX // CHRONO ]</span>
+                    </div>
+                    <p class="section-editorial-desc">
+                        Documenting real-world commercial responsibilities, inventory supervision, and academic milestones.
+                    </p>
+                </div>
+
+                <div class="archival-timeline-ledger" id="work-experience">
+                    <!-- Dynamic timeline entries -->
+                </div>
+            </div>
+        </section>
+
+        <!-- LeetCode & Problem Solving Section: Dark Precision Diagnostic -->
+        <section id="leetcode" class="editorial-section section-border-top">
+            <div class="container">
+                <div class="section-header-row">
+                    <div class="section-kicker">
+                        <span class="kicker-num">05</span>
+                        <span class="kicker-title" id="title-leetcode">Algorithmic Problem Solving</span>
+                        <span class="kicker-archive-id">[ LEETCODE_DIAGNOSTIC ]</span>
+                    </div>
+                    <p class="section-editorial-desc">
+                        Empirical problem solving metrics, algorithmic pattern recognition, and continuous logic conditioning.
+                    </p>
+                </div>
+
+                <div class="leetcode-editorial-card" id="leetcode-card">
+                    <!-- Dynamic LeetCode content -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume / Curriculum Vitae Section -->
+        <section id="resume" class="editorial-section section-border-top">
+            <div class="container">
+                <div class="section-header-row">
+                    <div class="section-kicker">
+                        <span class="kicker-num">06</span>
+                        <span class="kicker-title" id="title-resume">Curriculum Vitae (LaTeX Archive)</span>
+                        <span class="kicker-archive-id">[ MANUSCRIPT_SOURCE ]</span>
+                    </div>
+                    <p class="section-editorial-desc">
+                        Engineered in standard Overleaf / Jake's Resume LaTeX format for strict ATS transparency and typographic clarity.
+                    </p>
+                </div>
+
+                <div class="resume-editorial-display" id="resume-card">
+                    <!-- Dynamic Resume content -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Credentials Section -->
+        <section id="education" class="editorial-section section-border-top">
+            <div class="container">
+                <div class="section-header-row">
+                    <div class="section-kicker">
+                        <span class="kicker-num">07</span>
+                        <span class="kicker-title" id="title-education">Academic Trajectory &amp; Certifications</span>
+                        <span class="kicker-archive-id">[ INSTITUTIONAL_RECORDS ]</span>
+                    </div>
+                </div>
+
+                <div class="edu-editorial-grid">
+                    <div class="edu-column">
+                        <div class="column-label">DEGREE CANDIDACY</div>
+                        <div class="education-list" id="education-list">
+                            <!-- Dynamic education items -->
+                        </div>
+                    </div>
+                    <div class="cert-column">
+                        <div class="column-label">CREDENTIALS &amp; FOUNDATIONAL COURSEWORK</div>
+                        <div class="cert-list" id="cert-list">
+                            <!-- Dynamic certification items -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section: Simple Conversational Interaction -->
+        <section id="contact" class="editorial-section section-border-top">
+            <div class="container">
+                <div class="section-header-row">
+                    <div class="section-kicker">
+                        <span class="kicker-num">08</span>
+                        <span class="kicker-title">Inquiry &amp; Dispatch</span>
+                        <span class="kicker-archive-id">[ CHANNEL_OPEN ]</span>
+                    </div>
+                    <p class="section-editorial-desc">
+                        Conversational outreach for internships, technical dialogue, or software collaboration.
+                    </p>
+                </div>
+
+                <div class="contact-editorial-layout">
+                    <!-- Conversational Prompt Interaction Box -->
+                    <div class="conversational-contact-card">
+                        <div class="contact-card-header">
+                            <span class="composer-dot"></span>
+                            <span class="composer-title">CONVERSATIONAL DISPATCH COMPOSER</span>
+                        </div>
+                        <p class="composer-instruction">Select your intent to pre-compose a structured transmission:</p>
+                        
+                        <div class="inquiry-intent-buttons">
+                            <button type="button" class="intent-btn active" data-intent="internship">
+                                <span>● Software Internship</span>
+                            </button>
+                            <button type="button" class="intent-btn" data-intent="project">
+                                <span>● Technical Project</span>
+                            </button>
+                            <button type="button" class="intent-btn" data-intent="dialogue">
+                                <span>● Intellectual Exchange</span>
+                            </button>
+                        </div>
+
+                        <form id="conversational-contact-form" class="composer-form">
+                            <div class="form-group">
+                                <label for="inquiry-name" class="form-label">YOUR NAME / ORGANIZATION</label>
+                                <input type="text" id="inquiry-name" class="form-input" placeholder="e.g. Jane Doe, Tech Lead at Studio" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="inquiry-subject" class="form-label">TRANSMISSION SUBJECT</label>
+                                <input type="text" id="inquiry-subject" class="form-input" value="Inquiry: Summer 2026 Software Internship Opportunity" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="inquiry-message" class="form-label">MESSAGE DISPATCH</label>
+                                <textarea id="inquiry-message" class="form-textarea" rows="4" required>Hello Muhammad, I came across your editorial portfolio and would like to discuss an opportunity regarding...</textarea>
+                            </div>
+                            <div class="composer-actions">
+                                <button type="submit" class="editorial-btn primary" id="send-dispatch-btn">
+                                    <span>Transmit via Email</span>
+                                    <span class="btn-arrow">&rarr;</span>
+                                </button>
+                                <button type="button" class="editorial-btn secondary" id="copy-dispatch-btn">
+                                    <span>Copy Transmission</span>
+                                </button>
+                            </div>
+                            <div id="dispatch-feedback" class="dispatch-feedback" role="status" aria-live="polite"></div>
+                        </form>
+                    </div>
+
+                    <!-- Direct Archival Dossier Contacts -->
+                    <div class="contact-dossier-card">
+                        <div class="dossier-title">DIRECT ARCHIVAL CHANNELS</div>
+                        
+                        <div class="dossier-item">
+                            <span class="dossier-meta">ELECTRONIC MAIL</span>
+                            <a href="mailto:Mohammadumarjawad64@gmail.com" class="dossier-link">
+                                Mohammadumarjawad64@gmail.com
+                            </a>
+                        </div>
+
+                        <div class="dossier-item">
+                            <span class="dossier-meta">TELEPHONY / WHATSAPP</span>
+                            <a href="tel:+923072066060" class="dossier-link">
+                                (0307) 2066060
+                            </a>
+                        </div>
+
+                        <div class="dossier-item">
+                            <span class="dossier-meta">BASE OF RESIDENCE</span>
+                            <span class="dossier-text">Karachi (KAECHS Block 5), Sindh, Pakistan</span>
+                        </div>
+
+                        <div class="dossier-item">
+                            <span class="dossier-meta">VERIFIED DIRECTORIES</span>
+                            <div class="dossier-social-links" id="contact-social-links">
+                                <a href="https://github.com/mohammadumarjawad64-web" target="_blank" class="social-tag"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="https://www.linkedin.com/in/mohammad-umar-jawad-b80508253/" target="_blank" class="social-tag"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                                <a href="https://leetcode.com/u/mohammadumarjawad64/" target="_blank" class="social-tag"><i class="fas fa-code"></i> LeetCode</a>
+                            </div>
+                        </div>
+
+                        <div class="dossier-stamp">
+                            <div class="stamp-inner">
+                                <span>STUDIO PORTFOLIO</span>
+                                <strong>MU // 2026</strong>
+                                <span>EDITORIAL ED.</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; <span id="current-year"></span> <span id="footer-name">Muhammad Umar</span>. <span id="footer-tagline">Aspiring Computer Scientist.</span></p>
-            <div class="footer-social" id="footer-social">
-                <!-- Dynamic -->
+    <!-- Editorial Colophon / Footer -->
+    <footer class="editorial-footer">
+        <div class="container footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-monogram">MU</span>
+                    <span class="footer-caption">Editorial Dark Minimalism Portfolio &bull; 2026 Archive</span>
+                </div>
+                <div class="footer-time">
+                    <span class="time-label">LOCAL TEMPORAL (KARACHI):</span>
+                    <span class="time-val" id="karachi-clock">--:--:-- PKT (UTC+5)</span>
+                </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-bottom">
+                <p class="copyright-text">
+                    &copy; <span id="current-year">2026</span> <strong id="footer-name">Muhammad Umar</strong>. All rights archived. 
+                    <span id="footer-tagline">Crafted with intellectual rigor, quiet minimalism, and editorial precision.</span>
+                </p>
+                <div class="footer-anchors" id="footer-social">
+                    <!-- Dynamic profiles -->
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
